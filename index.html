@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blackcache Labs Ltd | Apps & Software</title>
-  <meta name="description" content="Blackcache Labs Ltd builds modern apps, software products, and digital tools for startups and businesses." />
+  <meta
+    name="description"
+    content="Blackcache Labs Ltd builds modern apps, software products, and digital tools for startups and businesses."
+  />
   <style>
     :root{
       --bg:#0a0f1c;
@@ -357,6 +360,10 @@
       margin-top:12px;
     }
 
+    .note.success{
+      color:#9ef0b2;
+    }
+
     .footer{
       padding:26px 0 40px;
       color:var(--muted);
@@ -543,15 +550,21 @@
             </p>
           </div>
 
-          <form id="contactForm">
+          <form id="contactForm" action="https://formsubmit.co/sales@blackcachelabs.com" method="POST">
             <input type="text" id="name" name="name" placeholder="Your name" required />
             <input type="email" id="email" name="email" placeholder="Your email" required />
             <textarea id="message" name="message" placeholder="Tell us about your project" required></textarea>
+
+            <input type="hidden" name="_subject" value="New website enquiry - Blackcache Labs Ltd">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://blackcachelabs.github.io/?submitted=true">
+
             <button class="btn btn-primary" type="submit">Send enquiry</button>
           </form>
 
           <div class="note" id="formNote">
-            This form currently opens your email app so messages can be sent directly.
+            Your enquiry will be sent to sales@blackcachelabs.com.
           </div>
         </div>
 
@@ -590,22 +603,13 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    document.getElementById("contactForm").addEventListener("submit", function(e) {
-      e.preventDefault();
+    const params = new URLSearchParams(window.location.search);
+    const formNote = document.getElementById("formNote");
 
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const message = document.getElementById("message").value.trim();
-
-      const subject = encodeURIComponent("Project enquiry from " + name);
-      const body = encodeURIComponent(
-        "Name: " + name + "\\n" +
-        "Email: " + email + "\\n\\n" +
-        "Project details:\\n" + message
-      );
-
-      window.location.href = "mailto:sales@blackcachelabs.com?subject=" + subject + "&body=" + body;
-    });
+    if (params.get("submitted") === "true") {
+      formNote.textContent = "Thank you. Your enquiry was submitted successfully.";
+      formNote.classList.add("success");
+    }
   </script>
 </body>
 </html>
