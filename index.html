@@ -3,25 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blackcache Labs Ltd | Apps & Software</title>
+  <title>Blackcache Labs Ltd | App & Software Development</title>
   <meta
     name="description"
-    content="Blackcache Labs Ltd builds modern apps, software products, and digital tools for startups and businesses."
+    content="Blackcache Labs Ltd builds modern apps, software platforms, internal tools, and digital products for startups and growing businesses."
   />
   <style>
     :root{
-      --bg:#0a0f1c;
-      --bg-soft:#10182b;
-      --card:#121c31;
-      --text:#f5f7fb;
-      --muted:#a7b2c8;
+      --bg:#07111f;
+      --bg-2:#0b1830;
+      --panel:rgba(255,255,255,0.05);
+      --panel-2:rgba(255,255,255,0.03);
+      --text:#f4f7fb;
+      --muted:#a9b6cc;
       --line:rgba(255,255,255,0.08);
       --accent:#6ee7ff;
-      --accent-2:#8b5cf6;
-      --success:#22c55e;
+      --accent-2:#7c5cff;
+      --accent-3:#9ff3ff;
+      --success:#8df0b4;
       --shadow:0 20px 60px rgba(0,0,0,.35);
-      --radius:22px;
-      --max:1160px;
+      --radius:24px;
+      --max:1180px;
     }
 
     *{box-sizing:border-box}
@@ -29,24 +31,23 @@
     body{
       margin:0;
       font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(110,231,255,.14), transparent 28%),
-        radial-gradient(circle at top right, rgba(139,92,246,.14), transparent 24%),
-        linear-gradient(180deg, #08101d 0%, #0b1324 55%, #09101c 100%);
       color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(110,231,255,.12), transparent 25%),
+        radial-gradient(circle at top right, rgba(124,92,255,.12), transparent 22%),
+        linear-gradient(180deg, #060e1a 0%, #0b1425 50%, #07111f 100%);
       line-height:1.6;
     }
 
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%}
-    .container{width:min(92%, var(--max)); margin:0 auto}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(92%, var(--max));margin:0 auto}
 
     .nav{
       position:sticky;
       top:0;
-      z-index:20;
-      backdrop-filter: blur(14px);
-      background:rgba(7,11,20,.65);
+      z-index:50;
+      background:rgba(6,12,22,.72);
+      backdrop-filter:blur(14px);
       border-bottom:1px solid var(--line);
     }
 
@@ -54,28 +55,40 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      padding:18px 0;
       gap:20px;
+      padding:16px 0;
     }
 
     .brand{
       display:flex;
       align-items:center;
       gap:14px;
-      font-weight:700;
+      min-width:0;
+    }
+
+    .brand-mark{
+      width:46px;
+      height:46px;
+      flex:0 0 auto;
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      line-height:1.05;
+    }
+
+    .brand-text strong{
+      font-size:1rem;
       letter-spacing:.2px;
     }
 
-    .logo{
-      width:42px;
-      height:42px;
-      border-radius:14px;
-      display:grid;
-      place-items:center;
-      background:linear-gradient(135deg, var(--accent), var(--accent-2));
-      color:#07111f;
-      font-weight:900;
-      box-shadow:var(--shadow);
+    .brand-text span{
+      font-size:.78rem;
+      color:var(--muted);
     }
 
     .nav-links{
@@ -88,146 +101,201 @@
 
     .nav-links a:hover{color:var(--text)}
 
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:14px 20px;
-      border-radius:999px;
-      border:1px solid transparent;
-      font-weight:600;
-      transition:.2s ease;
-      cursor:pointer;
-    }
-
-    .btn-primary{
-      background:linear-gradient(135deg, var(--accent), #8fdcff);
-      color:#07111f;
-    }
-
-    .btn-primary:hover{transform:translateY(-1px)}
-
-    .btn-secondary{
-      border-color:var(--line);
-      background:rgba(255,255,255,.03);
-      color:var(--text);
-    }
-
     .hero{
-      padding:88px 0 56px;
+      padding:84px 0 50px;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:34px;
+      grid-template-columns:1.08fr .92fr;
+      gap:28px;
       align-items:center;
     }
 
-    .eyebrow{
+    .pill{
       display:inline-flex;
       align-items:center;
       gap:10px;
-      padding:8px 14px;
-      border:1px solid var(--line);
+      padding:9px 14px;
       border-radius:999px;
-      color:#cfe8ff;
+      border:1px solid var(--line);
       background:rgba(255,255,255,.03);
+      color:#d8efff;
       font-size:.88rem;
-      margin-bottom:18px;
+      margin-bottom:20px;
     }
 
     h1{
-      font-size:clamp(2.4rem, 5vw, 4.6rem);
-      line-height:1.02;
       margin:0 0 18px;
-      letter-spacing:-1.4px;
+      font-size:clamp(2.6rem, 5vw, 5rem);
+      line-height:1.02;
+      letter-spacing:-1.6px;
+      max-width:760px;
     }
 
     .hero p{
+      margin:0 0 26px;
       font-size:1.08rem;
       color:var(--muted);
-      max-width:720px;
-      margin:0 0 26px;
+      max-width:700px;
     }
 
     .hero-actions{
       display:flex;
       flex-wrap:wrap;
       gap:14px;
-      margin-bottom:28px;
+      margin-bottom:24px;
     }
 
-    .mini-stats{
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border:none;
+      border-radius:999px;
+      padding:14px 22px;
+      font-weight:700;
+      cursor:pointer;
+      transition:.2s ease;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--accent), var(--accent-3));
+      color:#07111f;
+      box-shadow:0 14px 34px rgba(110,231,255,.18);
+    }
+
+    .btn-secondary{
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      color:var(--text);
+    }
+
+    .btn:hover{transform:translateY(-1px)}
+
+    .hero-tags{
       display:flex;
       flex-wrap:wrap;
-      gap:12px;
+      gap:10px;
     }
 
-    .stat-pill{
+    .tag{
       padding:10px 14px;
-      border:1px solid var(--line);
       border-radius:999px;
-      color:#d8e1f2;
+      border:1px solid var(--line);
       background:rgba(255,255,255,.03);
+      color:#dce8f7;
       font-size:.92rem;
     }
 
     .hero-card{
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      border:1px solid var(--line);
-      border-radius:28px;
-      padding:26px;
-      box-shadow:var(--shadow);
       position:relative;
+      padding:22px;
+      border-radius:30px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
+      box-shadow:var(--shadow);
       overflow:hidden;
     }
 
     .hero-card::before{
       content:"";
       position:absolute;
-      inset:auto -40px -60px auto;
-      width:180px;
-      height:180px;
-      background:radial-gradient(circle, rgba(110,231,255,.22), transparent 65%);
+      width:220px;
+      height:220px;
+      right:-50px;
+      top:-50px;
+      background:radial-gradient(circle, rgba(110,231,255,.20), transparent 65%);
       pointer-events:none;
     }
 
-    .mock-window{
-      border:1px solid var(--line);
-      background:#0b1222;
-      border-radius:18px;
+    .terminal{
+      position:relative;
+      border-radius:22px;
       overflow:hidden;
+      border:1px solid var(--line);
+      background:#091222;
     }
 
-    .mock-top{
+    .terminal-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:12px 16px;
+      border-bottom:1px solid var(--line);
+      background:#0d182d;
+    }
+
+    .terminal-dots{
       display:flex;
       gap:8px;
-      padding:12px 14px;
-      border-bottom:1px solid var(--line);
-      background:#0d1527;
     }
 
-    .dot{width:10px;height:10px;border-radius:50%;background:#31405f}
-    .mock-body{padding:18px}
+    .dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:#344564;
+    }
+
+    .terminal-title{
+      color:var(--muted);
+      font-size:.84rem;
+    }
+
+    .terminal-body{
+      padding:22px;
+      display:grid;
+      gap:12px;
+    }
+
+    .code-block{
+      border-radius:18px;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      padding:18px;
+    }
 
     .code-line{
-      height:12px;
+      height:10px;
       border-radius:999px;
-      margin:10px 0;
-      background:linear-gradient(90deg, rgba(110,231,255,.65), rgba(139,92,246,.45));
-      opacity:.9;
+      background:linear-gradient(90deg, rgba(110,231,255,.70), rgba(124,92,255,.45));
+      margin:11px 0;
     }
 
-    .code-line:nth-child(2){width:74%}
-    .code-line:nth-child(3){width:88%}
-    .code-line:nth-child(4){width:58%}
-    .code-line:nth-child(5){width:80%}
-    .code-line:nth-child(6){width:46%}
+    .code-line:nth-child(1){width:90%}
+    .code-line:nth-child(2){width:68%}
+    .code-line:nth-child(3){width:78%}
+    .code-line:nth-child(4){width:56%}
+    .code-line:nth-child(5){width:84%}
+
+    .mini-panels{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    .mini-panel{
+      padding:16px;
+      border-radius:18px;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+    }
+
+    .mini-panel strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:.95rem;
+    }
+
+    .mini-panel span{
+      color:var(--muted);
+      font-size:.9rem;
+    }
 
     section{
-      padding:36px 0;
+      padding:34px 0;
     }
 
     .section-head{
@@ -235,15 +303,15 @@
     }
 
     .section-head h2{
-      font-size:clamp(1.6rem, 3vw, 2.5rem);
       margin:0 0 10px;
+      font-size:clamp(1.7rem, 3vw, 2.7rem);
       letter-spacing:-.8px;
     }
 
     .section-head p{
       margin:0;
-      color:var(--muted);
       max-width:760px;
+      color:var(--muted);
     }
 
     .grid-3{
@@ -253,38 +321,39 @@
     }
 
     .card{
-      background:rgba(255,255,255,.03);
+      background:var(--panel);
       border:1px solid var(--line);
       border-radius:var(--radius);
       padding:22px;
       box-shadow:var(--shadow);
     }
 
+    .icon{
+      width:50px;
+      height:50px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, rgba(110,231,255,.14), rgba(124,92,255,.14));
+      border:1px solid var(--line);
+      font-size:1.15rem;
+      margin-bottom:14px;
+    }
+
     .card h3{
-      margin:14px 0 10px;
-      font-size:1.08rem;
+      margin:0 0 10px;
+      font-size:1.1rem;
     }
 
     .card p{
       margin:0;
       color:var(--muted);
-      font-size:.98rem;
+      font-size:.97rem;
     }
 
-    .icon{
-      width:48px;
-      height:48px;
-      border-radius:14px;
+    .split{
       display:grid;
-      place-items:center;
-      background:linear-gradient(135deg, rgba(110,231,255,.16), rgba(139,92,246,.16));
-      border:1px solid var(--line);
-      font-size:1.2rem;
-    }
-
-    .about{
-      display:grid;
-      grid-template-columns:1fr 1fr;
+      grid-template-columns:1.02fr .98fr;
       gap:18px;
     }
 
@@ -298,38 +367,73 @@
       display:flex;
       align-items:flex-start;
       gap:12px;
-      color:#dde6f5;
     }
 
     .tick{
       width:24px;
       height:24px;
+      flex:0 0 auto;
       border-radius:50%;
       display:grid;
       place-items:center;
-      background:rgba(34,197,94,.16);
-      color:#8af0a8;
-      flex:0 0 auto;
-      margin-top:2px;
+      background:rgba(141,240,180,.12);
+      color:var(--success);
       font-size:.8rem;
+      margin-top:2px;
     }
 
-    .contact-card{
+    .list-item div:last-child{
+      color:#dbe6f5;
+    }
+
+    .process{
       display:grid;
-      grid-template-columns:1.1fr .9fr;
+      grid-template-columns:repeat(4, 1fr);
+      gap:14px;
+    }
+
+    .step-card{
+      padding:20px;
+      border-radius:22px;
+      border:1px solid var(--line);
+      background:var(--panel-2);
+    }
+
+    .step-number{
+      width:36px;
+      height:36px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, var(--accent), var(--accent-2));
+      color:#07111f;
+      font-weight:800;
+      margin-bottom:14px;
+    }
+
+    .step-card h3{
+      margin:0 0 8px;
+      font-size:1rem;
+    }
+
+    .step-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:.94rem;
+    }
+
+    .contact-wrap{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
       gap:18px;
     }
 
     .contact-box{
-      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border:1px solid var(--line);
-      border-radius:var(--radius);
       padding:24px;
-    }
-
-    .contact-box p{
-      color:var(--muted);
-      margin-top:0;
+      border-radius:28px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.025));
+      box-shadow:var(--shadow);
     }
 
     form{
@@ -339,33 +443,37 @@
 
     input, textarea{
       width:100%;
-      padding:14px 16px;
       border-radius:16px;
       border:1px solid var(--line);
-      background:#0c1425;
+      background:#0a1425;
       color:var(--text);
+      padding:14px 16px;
       font:inherit;
       outline:none;
     }
 
-    textarea{min-height:140px; resize:vertical}
     input:focus, textarea:focus{
       border-color:rgba(110,231,255,.55);
       box-shadow:0 0 0 4px rgba(110,231,255,.08);
     }
 
+    textarea{
+      min-height:150px;
+      resize:vertical;
+    }
+
     .note{
-      font-size:.92rem;
       color:var(--muted);
+      font-size:.93rem;
       margin-top:12px;
     }
 
     .note.success{
-      color:#9ef0b2;
+      color:var(--success);
     }
 
     .footer{
-      padding:26px 0 40px;
+      padding:26px 0 42px;
       color:var(--muted);
       font-size:.94rem;
     }
@@ -375,15 +483,16 @@
       justify-content:space-between;
       gap:18px;
       flex-wrap:wrap;
-      padding-top:24px;
       border-top:1px solid var(--line);
+      padding-top:24px;
     }
 
-    @media (max-width: 960px){
+    @media (max-width:980px){
       .hero-grid,
       .grid-3,
-      .about,
-      .contact-card{
+      .split,
+      .process,
+      .contact-wrap{
         grid-template-columns:1fr;
       }
 
@@ -393,33 +502,46 @@
 
       .nav-links{
         width:100%;
-        justify-content:flex-start;
         overflow:auto;
-      }
-
-      .hero{
-        padding-top:54px;
       }
     }
 
-    @media (max-width: 620px){
+    @media (max-width:640px){
+      .hero{padding-top:56px}
       h1{letter-spacing:-1px}
-      .btn{width:100%}
       .hero-actions{display:grid}
+      .btn{width:100%}
+      .mini-panels{grid-template-columns:1fr}
     }
   </style>
 </head>
 <body>
   <nav class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="#top">
-        <div class="logo">B</div>
-        <span>Blackcache Labs Ltd</span>
+      <a href="#top" class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" width="46" height="46" xmlns="http://www.w3.org/2000/svg" role="img">
+            <defs>
+              <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#6ee7ff"/>
+                <stop offset="100%" stop-color="#7c5cff"/>
+              </linearGradient>
+            </defs>
+            <rect x="2" y="2" width="60" height="60" rx="18" fill="#08111f"/>
+            <rect x="6" y="6" width="52" height="52" rx="15" fill="url(#g1)"/>
+            <path d="M20 18h13.5c8.2 0 13.5 4.4 13.5 11.4 0 4.9-2.5 8.2-6.9 9.8L48 46H36.6l-6.2-5.8H29V46H20V18Zm9 15h4.1c3 0 5-1.1 5-3.5 0-2.3-2-3.5-5-3.5H29V33Z" fill="#07111f"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <strong>Blackcache Labs Ltd</strong>
+          <span>Apps · Software · Digital products</span>
+        </div>
       </a>
 
       <div class="nav-links">
         <a href="#services">Services</a>
-        <a href="#about">About</a>
+        <a href="#why-us">Why us</a>
+        <a href="#process">Process</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -429,40 +551,56 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Apps. Software. Digital products.</div>
-          <h1>We build modern software that helps businesses move faster.</h1>
+          <div class="pill">Software company for modern businesses</div>
+          <h1>We build apps and software that turn ideas into practical products.</h1>
           <p>
-            Blackcache Labs Ltd designs and builds apps, internal tools, web platforms, and custom software
-            for founders, startups, and growing businesses. We focus on clean execution, practical functionality,
-            and products people actually enjoy using.
+            Blackcache Labs Ltd designs and builds mobile apps, web platforms, internal tools, and tailored software solutions.
+            We help founders, startups, and businesses move from concept to launch with clean design, strong functionality, and reliable delivery.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Start a project</a>
-            <a class="btn btn-secondary" href="#services">See what we build</a>
+            <a class="btn btn-primary" href="#contact">Start a conversation</a>
+            <a class="btn btn-secondary" href="#services">Explore services</a>
           </div>
 
-          <div class="mini-stats">
-            <div class="stat-pill">Custom web apps</div>
-            <div class="stat-pill">Mobile app development</div>
-            <div class="stat-pill">Business software solutions</div>
+          <div class="hero-tags">
+            <div class="tag">Mobile app development</div>
+            <div class="tag">Web applications</div>
+            <div class="tag">Internal business tools</div>
+            <div class="tag">Product design & build</div>
           </div>
         </div>
 
         <div class="hero-card">
-          <div class="mock-window">
-            <div class="mock-top">
-              <div class="dot"></div>
-              <div class="dot"></div>
-              <div class="dot"></div>
+          <div class="terminal">
+            <div class="terminal-top">
+              <div class="terminal-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+              </div>
+              <div class="terminal-title">blackcache-labs / product-build</div>
             </div>
-            <div class="mock-body">
-              <div class="code-line" style="width:92%"></div>
-              <div class="code-line"></div>
-              <div class="code-line"></div>
-              <div class="code-line"></div>
-              <div class="code-line"></div>
-              <div class="code-line"></div>
+
+            <div class="terminal-body">
+              <div class="code-block">
+                <div class="code-line"></div>
+                <div class="code-line"></div>
+                <div class="code-line"></div>
+                <div class="code-line"></div>
+                <div class="code-line"></div>
+              </div>
+
+              <div class="mini-panels">
+                <div class="mini-panel">
+                  <strong>Build clearly</strong>
+                  <span>Focused software that solves real business needs.</span>
+                </div>
+                <div class="mini-panel">
+                  <strong>Ship practically</strong>
+                  <span>Fast-moving delivery without unnecessary complexity.</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -472,10 +610,9 @@
     <section id="services">
       <div class="container">
         <div class="section-head">
-          <h2>What we do</h2>
+          <h2>What we build</h2>
           <p>
-            We build digital products from idea to launch, helping businesses turn problems into usable,
-            scalable software.
+            We create software products that are useful, scalable, and designed to support real users and real operations.
           </p>
         </div>
 
@@ -483,53 +620,59 @@
           <div class="card">
             <div class="icon">📱</div>
             <h3>Mobile apps</h3>
-            <p>iOS and Android app experiences built for real users, clear journeys, and dependable performance.</p>
+            <p>
+              iOS and Android app experiences built for usability, performance, and smooth customer journeys.
+            </p>
           </div>
 
           <div class="card">
             <div class="icon">💻</div>
             <h3>Web platforms</h3>
-            <p>Modern websites, dashboards, portals, and web applications designed to support growth and usability.</p>
+            <p>
+              Dashboards, portals, websites, and web applications designed for clarity, speed, and growth.
+            </p>
           </div>
 
           <div class="card">
             <div class="icon">⚙️</div>
             <h3>Custom software</h3>
-            <p>Internal tools, workflow systems, and tailored software solutions that simplify operations and save time.</p>
+            <p>
+              Internal systems, workflow tools, and business software tailored to your specific operations.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="about">
-      <div class="container about">
+    <section id="why-us">
+      <div class="container split">
         <div class="card">
           <div class="section-head">
             <h2>About Blackcache Labs</h2>
             <p>
-              We are a software company focused on building useful digital products with clarity, speed, and attention to detail.
-              Our goal is simple: create software that solves meaningful problems and feels polished from day one.
+              We are a software company focused on building digital products with clear thinking, polished execution, and practical outcomes.
+              Our goal is not to overcomplicate software. It is to create products that work well, feel modern, and deliver value from day one.
             </p>
           </div>
         </div>
 
         <div class="card">
           <div class="section-head">
-            <h2>Why clients choose us</h2>
+            <h2>Why businesses work with us</h2>
           </div>
 
           <div class="list">
             <div class="list-item">
               <div class="tick">✓</div>
-              <div>Clear, modern product design</div>
+              <div>Modern design and product-led thinking</div>
             </div>
             <div class="list-item">
               <div class="tick">✓</div>
-              <div>Practical solutions, not unnecessary complexity</div>
+              <div>Clean, practical software decisions</div>
             </div>
             <div class="list-item">
               <div class="tick">✓</div>
-              <div>Flexible support for startups and growing companies</div>
+              <div>Flexible support for startups and growing teams</div>
             </div>
             <div class="list-item">
               <div class="tick">✓</div>
@@ -540,13 +683,50 @@
       </div>
     </section>
 
+    <section id="process">
+      <div class="container">
+        <div class="section-head">
+          <h2>How we work</h2>
+          <p>
+            Our approach is simple: understand the problem, design the solution clearly, build with focus, and ship with confidence.
+          </p>
+        </div>
+
+        <div class="process">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Discover</h3>
+            <p>We understand the product idea, business need, and user problem.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Design</h3>
+            <p>We shape the structure, user flow, and product experience.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Build</h3>
+            <p>We develop the product with a focus on quality and functionality.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <h3>Launch</h3>
+            <p>We help move the product live and support the next phase of growth.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="contact">
-      <div class="container contact-card">
+      <div class="container contact-wrap">
         <div class="contact-box">
           <div class="section-head">
             <h2>Let’s build something useful</h2>
             <p>
-              Have a project in mind or want to discuss a product idea? Send a message and we’ll get back to you.
+              Have an app, software product, or business tool in mind? Send a message and we’ll get back to you.
             </p>
           </div>
 
@@ -570,22 +750,22 @@
 
         <div class="contact-box">
           <div class="section-head">
-            <h2>Company</h2>
+            <h2>Company details</h2>
             <p>Blackcache Labs Ltd</p>
           </div>
 
           <div class="list">
             <div class="list-item">
               <div class="tick">→</div>
-              <div>Building apps, software, and digital tools</div>
+              <div>App and software development company</div>
             </div>
             <div class="list-item">
               <div class="tick">→</div>
-              <div>Available for product builds, business tools, and software partnerships</div>
+              <div>Available for software builds, internal tools, and digital product partnerships</div>
             </div>
             <div class="list-item">
               <div class="tick">→</div>
-              <div id="contactEmail">sales@blackcachelabs.com</div>
+              <div>sales@blackcachelabs.com</div>
             </div>
           </div>
         </div>
@@ -596,7 +776,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div>© <span id="year"></span> Blackcache Labs Ltd. All rights reserved.</div>
-      <div>Built with clarity, speed, and purpose.</div>
+      <div>Designed to be clear, modern, and functional.</div>
     </div>
   </footer>
 
