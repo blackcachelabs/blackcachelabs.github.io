@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blackcache Labs Ltd | Apps & Software</title>
+  <meta name="description" content="Blackcache Labs Ltd builds modern apps, software products, and digital tools for startups and businesses." />
+  <style>
+    :root{
+      --bg:#0a0f1c;
+      --bg-soft:#10182b;
+      --card:#121c31;
+      --text:#f5f7fb;
+      --muted:#a7b2c8;
+      --line:rgba(255,255,255,0.08);
+      --accent:#6ee7ff;
+      --accent-2:#8b5cf6;
+      --success:#22c55e;
+      --shadow:0 20px 60px rgba(0,0,0,.35);
+      --radius:22px;
+      --max:1160px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(110,231,255,.14), transparent 28%),
+        radial-gradient(circle at top right, rgba(139,92,246,.14), transparent 24%),
+        linear-gradient(180deg, #08101d 0%, #0b1324 55%, #09101c 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%}
+    .container{width:min(92%, var(--max)); margin:0 auto}
+
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:20;
+      backdrop-filter: blur(14px);
+      background:rgba(7,11,20,.65);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:18px 0;
+      gap:20px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+
+    .logo{
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, var(--accent), var(--accent-2));
+      color:#07111f;
+      font-weight:900;
+      box-shadow:var(--shadow);
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:22px;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .nav-links a:hover{color:var(--text)}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 20px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-weight:600;
+      transition:.2s ease;
+      cursor:pointer;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--accent), #8fdcff);
+      color:#07111f;
+    }
+
+    .btn-primary:hover{transform:translateY(-1px)}
+
+    .btn-secondary{
+      border-color:var(--line);
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+    }
+
+    .hero{
+      padding:88px 0 56px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:34px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 14px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:#cfe8ff;
+      background:rgba(255,255,255,.03);
+      font-size:.88rem;
+      margin-bottom:18px;
+    }
+
+    h1{
+      font-size:clamp(2.4rem, 5vw, 4.6rem);
+      line-height:1.02;
+      margin:0 0 18px;
+      letter-spacing:-1.4px;
+    }
+
+    .hero p{
+      font-size:1.08rem;
+      color:var(--muted);
+      max-width:720px;
+      margin:0 0 26px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-bottom:28px;
+    }
+
+    .mini-stats{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .stat-pill{
+      padding:10px 14px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:#d8e1f2;
+      background:rgba(255,255,255,.03);
+      font-size:.92rem;
+    }
+
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:26px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      inset:auto -40px -60px auto;
+      width:180px;
+      height:180px;
+      background:radial-gradient(circle, rgba(110,231,255,.22), transparent 65%);
+      pointer-events:none;
+    }
+
+    .mock-window{
+      border:1px solid var(--line);
+      background:#0b1222;
+      border-radius:18px;
+      overflow:hidden;
+    }
+
+    .mock-top{
+      display:flex;
+      gap:8px;
+      padding:12px 14px;
+      border-bottom:1px solid var(--line);
+      background:#0d1527;
+    }
+
+    .dot{width:10px;height:10px;border-radius:50%;background:#31405f}
+    .mock-body{padding:18px}
+
+    .code-line{
+      height:12px;
+      border-radius:999px;
+      margin:10px 0;
+      background:linear-gradient(90deg, rgba(110,231,255,.65), rgba(139,92,246,.45));
+      opacity:.9;
+    }
+
+    .code-line:nth-child(2){width:74%}
+    .code-line:nth-child(3){width:88%}
+    .code-line:nth-child(4){width:58%}
+    .code-line:nth-child(5){width:80%}
+    .code-line:nth-child(6){width:46%}
+
+    section{
+      padding:36px 0;
+    }
+
+    .section-head{
+      margin-bottom:22px;
+    }
+
+    .section-head h2{
+      font-size:clamp(1.6rem, 3vw, 2.5rem);
+      margin:0 0 10px;
+      letter-spacing:-.8px;
+    }
+
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      max-width:760px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .card h3{
+      margin:14px 0 10px;
+      font-size:1.08rem;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:.98rem;
+    }
+
+    .icon{
+      width:48px;
+      height:48px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, rgba(110,231,255,.16), rgba(139,92,246,.16));
+      border:1px solid var(--line);
+      font-size:1.2rem;
+    }
+
+    .about{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .list{
+      display:grid;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .list-item{
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      color:#dde6f5;
+    }
+
+    .tick{
+      width:24px;
+      height:24px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:rgba(34,197,94,.16);
+      color:#8af0a8;
+      flex:0 0 auto;
+      margin-top:2px;
+      font-size:.8rem;
+    }
+
+    .contact-card{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:18px;
+    }
+
+    .contact-box{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:24px;
+    }
+
+    .contact-box p{
+      color:var(--muted);
+      margin-top:0;
+    }
+
+    form{
+      display:grid;
+      gap:14px;
+    }
+
+    input, textarea{
+      width:100%;
+      padding:14px 16px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:#0c1425;
+      color:var(--text);
+      font:inherit;
+      outline:none;
+    }
+
+    textarea{min-height:140px; resize:vertical}
+    input:focus, textarea:focus{
+      border-color:rgba(110,231,255,.55);
+      box-shadow:0 0 0 4px rgba(110,231,255,.08);
+    }
+
+    .note{
+      font-size:.92rem;
+      color:var(--muted);
+      margin-top:12px;
+    }
+
+    .footer{
+      padding:26px 0 40px;
+      color:var(--muted);
+      font-size:.94rem;
+    }
+
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+      padding-top:24px;
+      border-top:1px solid var(--line);
+    }
+
+    @media (max-width: 960px){
+      .hero-grid,
+      .grid-3,
+      .about,
+      .contact-card{
+        grid-template-columns:1fr;
+      }
+
+      .nav-inner{
+        flex-wrap:wrap;
+      }
+
+      .nav-links{
+        width:100%;
+        justify-content:flex-start;
+        overflow:auto;
+      }
+
+      .hero{
+        padding-top:54px;
+      }
+    }
+
+    @media (max-width: 620px){
+      h1{letter-spacing:-1px}
+      .btn{width:100%}
+      .hero-actions{display:grid}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">
+        <div class="logo">B</div>
+        <span>Blackcache Labs Ltd</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Apps. Software. Digital products.</div>
+          <h1>We build modern software that helps businesses move faster.</h1>
+          <p>
+            Blackcache Labs Ltd designs and builds apps, internal tools, web platforms, and custom software
+            for founders, startups, and growing businesses. We focus on clean execution, practical functionality,
+            and products people actually enjoy using.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Start a project</a>
+            <a class="btn btn-secondary" href="#services">See what we build</a>
+          </div>
+
+          <div class="mini-stats">
+            <div class="stat-pill">Custom web apps</div>
+            <div class="stat-pill">Mobile app development</div>
+            <div class="stat-pill">Business software solutions</div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="mock-window">
+            <div class="mock-top">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+            <div class="mock-body">
+              <div class="code-line" style="width:92%"></div>
+              <div class="code-line"></div>
+              <div class="code-line"></div>
+              <div class="code-line"></div>
+              <div class="code-line"></div>
+              <div class="code-line"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>What we do</h2>
+          <p>
+            We build digital products from idea to launch, helping businesses turn problems into usable,
+            scalable software.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="icon">📱</div>
+            <h3>Mobile apps</h3>
+            <p>iOS and Android app experiences built for real users, clear journeys, and dependable performance.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">💻</div>
+            <h3>Web platforms</h3>
+            <p>Modern websites, dashboards, portals, and web applications designed to support growth and usability.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">⚙️</div>
+            <h3>Custom software</h3>
+            <p>Internal tools, workflow systems, and tailored software solutions that simplify operations and save time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about">
+        <div class="card">
+          <div class="section-head">
+            <h2>About Blackcache Labs</h2>
+            <p>
+              We are a software company focused on building useful digital products with clarity, speed, and attention to detail.
+              Our goal is simple: create software that solves meaningful problems and feels polished from day one.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="section-head">
+            <h2>Why clients choose us</h2>
+          </div>
+
+          <div class="list">
+            <div class="list-item">
+              <div class="tick">✓</div>
+              <div>Clear, modern product design</div>
+            </div>
+            <div class="list-item">
+              <div class="tick">✓</div>
+              <div>Practical solutions, not unnecessary complexity</div>
+            </div>
+            <div class="list-item">
+              <div class="tick">✓</div>
+              <div>Flexible support for startups and growing companies</div>
+            </div>
+            <div class="list-item">
+              <div class="tick">✓</div>
+              <div>Strong focus on usability, speed, and reliability</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-card">
+        <div class="contact-box">
+          <div class="section-head">
+            <h2>Let’s build something useful</h2>
+            <p>
+              Have a project in mind or want to discuss a product idea? Send a message and we’ll get back to you.
+            </p>
+          </div>
+
+          <form id="contactForm">
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+            <input type="email" id="email" name="email" placeholder="Your email" required />
+            <textarea id="message" name="message" placeholder="Tell us about your project" required></textarea>
+            <button class="btn btn-primary" type="submit">Send enquiry</button>
+          </form>
+
+          <div class="note" id="formNote">
+            This form currently opens your email app so messages can be sent directly.
+          </div>
+        </div>
+
+        <div class="contact-box">
+          <div class="section-head">
+            <h2>Company</h2>
+            <p>Blackcache Labs Ltd</p>
+          </div>
+
+          <div class="list">
+            <div class="list-item">
+              <div class="tick">→</div>
+              <div>Building apps, software, and digital tools</div>
+            </div>
+            <div class="list-item">
+              <div class="tick">→</div>
+              <div>Available for product builds, business tools, and software partnerships</div>
+            </div>
+            <div class="list-item">
+              <div class="tick">→</div>
+              <div id="contactEmail">Contact email to be added in the next step</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Blackcache Labs Ltd. All rights reserved.</div>
+      <div>Built with clarity, speed, and purpose.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const subject = encodeURIComponent("Project enquiry from " + name);
+      const body = encodeURIComponent(
+        "Name: " + name + "\\n" +
+        "Email: " + email + "\\n\\n" +
+        "Project details:\\n" + message
+      );
+
+      window.location.href = "mailto:hello@blackcachelabs.com?subject=" + subject + "&body=" + body;
+    });
+  </script>
+</body>
+</html>
