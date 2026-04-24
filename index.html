@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-<link rel="shortcut icon" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.svg" />
   <title>Blackcache Labs Ltd | App & Software Development</title>
   <meta
     name="description"
@@ -533,6 +533,15 @@
       color:var(--text);
     }
 
+    .company-meta{
+      margin-top:14px;
+      padding-top:14px;
+      border-top:1px solid var(--line);
+      font-size:.92rem;
+      color:var(--muted);
+      line-height:1.7;
+    }
+
     .footer-inner{
       display:flex;
       justify-content:space-between;
@@ -631,7 +640,7 @@
             <div class="tag">Mobile app development</div>
             <div class="tag">Web applications</div>
             <div class="tag">Internal business tools</div>
-            <div class="tag">Product design & build</div>
+            <div class="tag">Product design &amp; build</div>
           </div>
         </div>
 
@@ -829,11 +838,11 @@
             </div>
             <div class="list-item">
               <div class="tick">→</div>
-              <div>sales@blackcachelabs.com</div>
+              <div><a href="mailto:sales@blackcachelabs.com">sales@blackcachelabs.com</a></div>
             </div>
             <div class="list-item">
               <div class="tick">→</div>
-              <div><a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Use</a></div>
+              <div><a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Use</a> · <a href="/support.html">App Support</a></div>
             </div>
           </div>
         </div>
@@ -850,16 +859,21 @@
             App and software development company building modern digital products,
             internal tools, and web platforms for startups and growing businesses.
           </p>
+          <div class="company-meta">
+            Limited company registered in England and Wales<br>
+            Company No. 17149813<br>
+            Registered office: 130 Copperfields, Essex, SS15 5RZ
+          </div>
         </div>
 
         <div class="footer-column">
           <h3>Support</h3>
           <div class="footer-links">
-  <a href="mailto:sales@blackcachelabs.com">sales@blackcachelabs.com</a>
-  <a href="/support.html">App Support</a>
-  <a href="/#contact">Contact form</a>
-  <a href="/">Home</a>
-</div>
+            <a href="mailto:sales@blackcachelabs.com">sales@blackcachelabs.com</a>
+            <a href="/support.html">App Support</a>
+            <a href="/#contact">Contact form</a>
+            <a href="/">Home</a>
+          </div>
         </div>
 
         <div class="footer-column">
@@ -883,15 +897,23 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Blackcache Labs Ltd",
+      "legalName": "Blackcache Labs Ltd",
       "url": "https://blackcachelabs.com/",
       "email": "sales@blackcachelabs.com",
-      "sameAs": [],
+      "identifier": "17149813",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "130 Copperfields",
+        "addressRegion": "Essex",
+        "postalCode": "SS15 5RZ",
+        "addressCountry": "GB"
+      },
       "contactPoint": [
         {
           "@type": "ContactPoint",
           "contactType": "customer support",
           "email": "sales@blackcachelabs.com",
-          "url": "https://blackcachelabs.com/#contact"
+          "url": "https://blackcachelabs.com/support.html"
         }
       ]
     }
