@@ -8,6 +8,24 @@
     name="description"
     content="Blackcache Labs Ltd builds modern apps, software platforms, internal tools, and digital products for startups and growing businesses."
   />
+  <link rel="canonical" href="https://blackcachelabs.com/" />
+  <meta name="theme-color" content="#07111f" />
+
+  <meta property="og:title" content="Blackcache Labs Ltd | App & Software Development" />
+  <meta
+    property="og:description"
+    content="Blackcache Labs Ltd builds modern apps, software platforms, internal tools, and digital products for startups and growing businesses."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://blackcachelabs.com/" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blackcache Labs Ltd | App & Software Development" />
+  <meta
+    name="twitter:description"
+    content="Blackcache Labs Ltd builds modern apps, software platforms, internal tools, and digital products for startups and growing businesses."
+  />
+
   <style>
     :root{
       --bg:#07111f;
@@ -478,6 +496,41 @@
       font-size:.94rem;
     }
 
+    .footer-columns{
+      display:grid;
+      grid-template-columns:1.2fr .8fr .8fr;
+      gap:18px;
+      margin-bottom:22px;
+    }
+
+    .footer-column{
+      padding:20px;
+      border-radius:20px;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+    }
+
+    .footer-column h3{
+      margin:0 0 10px;
+      font-size:1rem;
+      color:var(--text);
+    }
+
+    .footer-column p,
+    .footer-column a{
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .footer-links{
+      display:grid;
+      gap:10px;
+    }
+
+    .footer-links a:hover{
+      color:var(--text);
+    }
+
     .footer-inner{
       display:flex;
       justify-content:space-between;
@@ -492,7 +545,8 @@
       .grid-3,
       .split,
       .process,
-      .contact-wrap{
+      .contact-wrap,
+      .footer-columns{
         grid-template-columns:1fr;
       }
 
@@ -518,7 +572,7 @@
 <body>
   <nav class="nav">
     <div class="container nav-inner">
-      <a href="#top" class="brand">
+      <a href="#top" class="brand" aria-label="Blackcache Labs home">
         <div class="brand-mark" aria-hidden="true">
           <svg viewBox="0 0 64 64" width="48" height="48" xmlns="http://www.w3.org/2000/svg" role="img">
             <defs>
@@ -746,7 +800,7 @@
             <input type="hidden" name="_subject" value="New website enquiry - Blackcache Labs Ltd">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_next" value="https://blackcachelabs.github.io/?submitted=true">
+            <input type="hidden" name="_next" value="https://blackcachelabs.com/?submitted=true">
 
             <button class="btn btn-primary" type="submit">Send enquiry</button>
           </form>
@@ -775,6 +829,10 @@
               <div class="tick">→</div>
               <div>sales@blackcachelabs.com</div>
             </div>
+            <div class="list-item">
+              <div class="tick">→</div>
+              <div><a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Use</a></div>
+            </div>
           </div>
         </div>
       </div>
@@ -782,11 +840,59 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer-inner">
-      <div>© <span id="year"></span> Blackcache Labs Ltd. All rights reserved.</div>
-      <div>Designed to be clear, modern, and functional.</div>
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h3>Blackcache Labs Ltd</h3>
+          <p>
+            App and software development company building modern digital products,
+            internal tools, and web platforms for startups and growing businesses.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Support</h3>
+          <div class="footer-links">
+            <a href="mailto:sales@blackcachelabs.com">sales@blackcachelabs.com</a>
+            <a href="/#contact">Contact form</a>
+            <a href="/">Home</a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h3>Policies</h3>
+          <div class="footer-links">
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/terms.html">Terms of Use</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-inner">
+        <div>© <span id="year"></span> Blackcache Labs Ltd. All rights reserved.</div>
+        <div>Designed to be clear, modern, and functional.</div>
+      </div>
     </div>
   </footer>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Blackcache Labs Ltd",
+      "url": "https://blackcachelabs.com/",
+      "email": "sales@blackcachelabs.com",
+      "sameAs": [],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "sales@blackcachelabs.com",
+          "url": "https://blackcachelabs.com/#contact"
+        }
+      ]
+    }
+  </script>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
