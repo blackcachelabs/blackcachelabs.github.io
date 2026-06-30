@@ -5,33 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="shortcut icon" href="/favicon.svg" />
-  <title>Blackcache Labs Ltd | App & Software Development</title>
+  <title>Blackcache Labs Ltd | The company behind Puffbums and PuffZenDen</title>
   <meta
     name="description"
-    content="Blackcache Labs Ltd builds modern apps, software platforms, internal tools, and digital products for startups and growing businesses."
+    content="Blackcache Labs Ltd is the company behind Puffbums and PuffZenDen, pioneering tactile-led breathing through a connected phygital ecosystem."
   />
   <link rel="canonical" href="https://blackcachelabs.com/" />
   <meta name="theme-color" content="#07111f" />
 
-  <meta property="og:title" content="Blackcache Labs Ltd | App & Software Development" />
+  <meta property="og:title" content="Blackcache Labs Ltd | The company behind Puffbums and PuffZenDen" />
   <meta
     property="og:description"
-    content="Blackcache Labs Ltd builds modern apps, software platforms, internal tools, and digital products for startups and growing businesses."
+    content="Blackcache Labs Ltd builds phygital products for calm, comfort, and regulation through Puffbums and PuffZenDen."
   />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://blackcachelabs.com/" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Blackcache Labs Ltd | App & Software Development" />
+  <meta name="twitter:title" content="Blackcache Labs Ltd | The company behind Puffbums and PuffZenDen" />
   <meta
     name="twitter:description"
-    content="Blackcache Labs Ltd builds modern apps, software platforms, internal tools, and digital products for startups and growing businesses."
+    content="Blackcache Labs Ltd builds phygital products for calm, comfort, and regulation through Puffbums and PuffZenDen."
   />
 
   <style>
     :root{
       --bg:#07111f;
-      --bg-2:#0b1830;
+      --bg-2:#0b1425;
       --panel:rgba(255,255,255,0.05);
       --panel-2:rgba(255,255,255,0.03);
       --text:#f4f7fb;
@@ -40,10 +40,11 @@
       --accent:#6ee7ff;
       --accent-2:#7c5cff;
       --accent-3:#9ff3ff;
-      --success:#8df0b4;
+      --soft:#dfe9f7;
       --shadow:0 20px 60px rgba(0,0,0,.35);
-      --radius:24px;
-      --max:1180px;
+      --radius:26px;
+      --radius-sm:18px;
+      --max:1220px;
     }
 
     *{box-sizing:border-box}
@@ -53,20 +54,32 @@
       font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at top left, rgba(110,231,255,.12), transparent 25%),
-        radial-gradient(circle at top right, rgba(124,92,255,.12), transparent 22%),
-        linear-gradient(180deg, #060e1a 0%, #0b1425 50%, #07111f 100%);
+        radial-gradient(circle at top left, rgba(110,231,255,.10), transparent 22%),
+        radial-gradient(circle at top right, rgba(124,92,255,.12), transparent 20%),
+        linear-gradient(180deg, #050c17 0%, #0a1323 45%, #07111f 100%);
       line-height:1.6;
     }
 
-    a{text-decoration:none;color:inherit}
-    .container{width:min(92%, var(--max));margin:0 auto}
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .container{
+      width:min(92%, var(--max));
+      margin:0 auto;
+    }
 
     .nav{
       position:sticky;
       top:0;
-      z-index:50;
-      background:rgba(6,12,22,.72);
+      z-index:60;
+      background:rgba(6,12,22,.74);
       backdrop-filter:blur(14px);
       border-bottom:1px solid var(--line);
     }
@@ -119,20 +132,57 @@
       font-size:.95rem;
     }
 
-    .nav-links a:hover{color:var(--text)}
+    .nav-links a:hover{
+      color:var(--text);
+    }
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border:none;
+      border-radius:999px;
+      padding:14px 22px;
+      font-weight:700;
+      cursor:pointer;
+      transition:.2s ease;
+      text-align:center;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--accent), var(--accent-3));
+      color:#07111f;
+      box-shadow:0 14px 34px rgba(110,231,255,.18);
+    }
+
+    .btn-secondary{
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      color:var(--text);
+    }
 
     .hero{
-      padding:84px 0 50px;
+      padding:72px 0 50px;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns:1.08fr .92fr;
-      gap:28px;
+      grid-template-columns:1.02fr .98fr;
+      gap:30px;
       align-items:center;
     }
 
-    .pill{
+    .eyebrow{
       display:inline-flex;
       align-items:center;
       gap:10px;
@@ -153,8 +203,8 @@
       max-width:760px;
     }
 
-    .hero p{
-      margin:0 0 26px;
+    .hero-copy p{
+      margin:0 0 22px;
       font-size:1.08rem;
       color:var(--muted);
       max-width:700px;
@@ -164,34 +214,8 @@
       display:flex;
       flex-wrap:wrap;
       gap:14px;
-      margin-bottom:24px;
+      margin:24px 0;
     }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      border:none;
-      border-radius:999px;
-      padding:14px 22px;
-      font-weight:700;
-      cursor:pointer;
-      transition:.2s ease;
-    }
-
-    .btn-primary{
-      background:linear-gradient(135deg, var(--accent), var(--accent-3));
-      color:#07111f;
-      box-shadow:0 14px 34px rgba(110,231,255,.18);
-    }
-
-    .btn-secondary{
-      background:rgba(255,255,255,.04);
-      border:1px solid var(--line);
-      color:var(--text);
-    }
-
-    .btn:hover{transform:translateY(-1px)}
 
     .hero-tags{
       display:flex;
@@ -208,114 +232,59 @@
       font-size:.92rem;
     }
 
-    .hero-card{
+    .hero-visual{
       position:relative;
-      padding:22px;
-      border-radius:30px;
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
-      box-shadow:var(--shadow);
-      overflow:hidden;
     }
 
-    .hero-card::before{
-      content:"";
-      position:absolute;
-      width:220px;
-      height:220px;
-      right:-50px;
-      top:-50px;
-      background:radial-gradient(circle, rgba(110,231,255,.20), transparent 65%);
-      pointer-events:none;
-    }
-
-    .terminal{
+    .hero-image-wrap{
       position:relative;
-      border-radius:22px;
+      border-radius:32px;
       overflow:hidden;
       border:1px solid var(--line);
       background:#091222;
+      box-shadow:var(--shadow);
     }
 
-    .terminal-top{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      padding:12px 16px;
-      border-bottom:1px solid var(--line);
-      background:#0d182d;
+    .hero-image-wrap img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
     }
 
-    .terminal-dots{
-      display:flex;
-      gap:8px;
-    }
-
-    .dot{
-      width:10px;
-      height:10px;
-      border-radius:50%;
-      background:#344564;
-    }
-
-    .terminal-title{
-      color:var(--muted);
-      font-size:.84rem;
-    }
-
-    .terminal-body{
-      padding:22px;
-      display:grid;
-      gap:12px;
-    }
-
-    .code-block{
-      border-radius:18px;
-      background:rgba(255,255,255,.03);
-      border:1px solid var(--line);
-      padding:18px;
-    }
-
-    .code-line{
-      height:10px;
-      border-radius:999px;
-      background:linear-gradient(90deg, rgba(110,231,255,.70), rgba(124,92,255,.45));
-      margin:11px 0;
-    }
-
-    .code-line:nth-child(1){width:90%}
-    .code-line:nth-child(2){width:68%}
-    .code-line:nth-child(3){width:78%}
-    .code-line:nth-child(4){width:56%}
-    .code-line:nth-child(5){width:84%}
-
-    .mini-panels{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-    }
-
-    .mini-panel{
+    .hero-float{
+      position:absolute;
+      right:18px;
+      bottom:18px;
+      width:min(290px, 82%);
+      background:rgba(6,12,22,.82);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:20px;
       padding:16px;
-      border-radius:18px;
-      background:rgba(255,255,255,.03);
-      border:1px solid var(--line);
+      backdrop-filter:blur(12px);
+      box-shadow:var(--shadow);
     }
 
-    .mini-panel strong{
-      display:block;
-      margin-bottom:6px;
-      font-size:.95rem;
+    .hero-float h3{
+      margin:0 0 8px;
+      font-size:1rem;
     }
 
-    .mini-panel span{
+    .hero-float p{
+      margin:0;
       color:var(--muted);
-      font-size:.9rem;
+      font-size:.92rem;
+    }
+
+    .hero-float .mini{
+      margin-top:12px;
+      display:grid;
+      gap:8px;
+      color:#dbe6f5;
+      font-size:.88rem;
     }
 
     section{
-      padding:34px 0;
+      padding:38px 0;
     }
 
     .section-head{
@@ -324,14 +293,28 @@
 
     .section-head h2{
       margin:0 0 10px;
-      font-size:clamp(1.7rem, 3vw, 2.7rem);
-      letter-spacing:-.8px;
+      font-size:clamp(1.8rem, 3vw, 2.8rem);
+      letter-spacing:-.9px;
     }
 
     .section-head p{
       margin:0;
-      max-width:760px;
+      max-width:780px;
       color:var(--muted);
+    }
+
+    .card{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
     }
 
     .grid-3{
@@ -340,12 +323,22 @@
       gap:18px;
     }
 
-    .card{
-      background:var(--panel);
+    .about-copy{
+      display:grid;
+      gap:16px;
+    }
+
+    .about-copy p{
+      margin:0;
+      color:#dce6f5;
+    }
+
+    .callout{
+      padding:18px;
+      border-radius:20px;
       border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:22px;
-      box-shadow:var(--shadow);
+      background:rgba(255,255,255,.03);
+      color:#dce6f5;
     }
 
     .icon{
@@ -371,57 +364,119 @@
       font-size:.97rem;
     }
 
-    .split{
+    .quote-line{
+      font-size:1.08rem;
+      color:#e6eefb;
+      margin-top:8px;
+    }
+
+    .ecosystem-wrap{
       display:grid;
-      grid-template-columns:1.02fr .98fr;
+      grid-template-columns:1.06fr .94fr;
+      gap:18px;
+      align-items:stretch;
+    }
+
+    .stack{
+      display:grid;
       gap:18px;
     }
 
-    .list{
+    .product-card{
       display:grid;
-      gap:12px;
-      margin-top:18px;
+      grid-template-columns:.95fr 1.05fr;
+      gap:20px;
+      align-items:center;
+      padding:20px;
+      border-radius:26px;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      overflow:hidden;
     }
 
-    .list-item{
+    .product-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .product-copy h3{
+      margin:0 0 10px;
+      font-size:1.35rem;
+    }
+
+    .product-copy p{
+      margin:0 0 14px;
+      color:var(--muted);
+    }
+
+    .inline-list{
+      display:grid;
+      gap:10px;
+      margin-top:14px;
+    }
+
+    .inline-list div{
       display:flex;
       align-items:flex-start;
-      gap:12px;
+      gap:10px;
+      color:#dce6f5;
+      font-size:.95rem;
     }
 
-    .tick{
-      width:24px;
-      height:24px;
+    .bullet{
+      width:22px;
+      height:22px;
       flex:0 0 auto;
       border-radius:50%;
       display:grid;
       place-items:center;
-      background:rgba(141,240,180,.12);
-      color:var(--success);
+      background:rgba(110,231,255,.12);
+      color:var(--accent-3);
       font-size:.8rem;
-      margin-top:2px;
+      margin-top:1px;
     }
 
-    .list-item div:last-child{
-      color:#dbe6f5;
+    .image-panel{
+      overflow:hidden;
+      padding:0;
     }
 
-    .process{
+    .image-panel img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .image-caption{
+      padding:18px 20px;
+      border-top:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+    }
+
+    .image-caption strong{
+      display:block;
+      margin-bottom:6px;
+    }
+
+    .steps{
       display:grid;
-      grid-template-columns:repeat(4, 1fr);
-      gap:14px;
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
     }
 
-    .step-card{
-      padding:20px;
+    .step{
+      padding:22px;
       border-radius:22px;
       border:1px solid var(--line);
       background:var(--panel-2);
     }
 
     .step-number{
-      width:36px;
-      height:36px;
+      width:40px;
+      height:40px;
       border-radius:50%;
       display:grid;
       place-items:center;
@@ -431,83 +486,61 @@
       margin-bottom:14px;
     }
 
-    .step-card h3{
+    .step h3{
       margin:0 0 8px;
-      font-size:1rem;
+      font-size:1.08rem;
     }
 
-    .step-card p{
+    .step p{
       margin:0;
       color:var(--muted);
-      font-size:.94rem;
+      font-size:.95rem;
     }
 
-    .contact-wrap{
+    .cta{
+      padding:10px 0 44px;
+    }
+
+    .cta-panel{
       display:grid;
-      grid-template-columns:1.08fr .92fr;
-      gap:18px;
-    }
-
-    .contact-box{
-      padding:24px;
+      grid-template-columns:1fr auto;
+      gap:20px;
+      align-items:center;
+      padding:28px;
       border-radius:28px;
       border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.025));
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
       box-shadow:var(--shadow);
     }
 
-    form{
-      display:grid;
-      gap:14px;
+    .cta-panel h2{
+      margin:0 0 10px;
+      font-size:clamp(1.7rem, 3vw, 2.5rem);
+      letter-spacing:-.8px;
     }
 
-    input, textarea{
-      width:100%;
-      border-radius:16px;
-      border:1px solid var(--line);
-      background:#0a1425;
-      color:var(--text);
-      padding:14px 16px;
-      font:inherit;
-      outline:none;
-    }
-
-    input:focus, textarea:focus{
-      border-color:rgba(110,231,255,.55);
-      box-shadow:0 0 0 4px rgba(110,231,255,.08);
-    }
-
-    textarea{
-      min-height:150px;
-      resize:vertical;
-    }
-
-    .note{
+    .cta-panel p{
+      margin:0;
       color:var(--muted);
-      font-size:.93rem;
-      margin-top:12px;
-    }
-
-    .note.success{
-      color:var(--success);
+      max-width:780px;
     }
 
     .footer{
-      padding:26px 0 42px;
+      padding:28px 0 44px;
       color:var(--muted);
       font-size:.94rem;
     }
 
     .footer-columns{
       display:grid;
-      grid-template-columns:1.2fr .8fr .8fr;
+      grid-template-columns:1.15fr .85fr .85fr;
       gap:18px;
       margin-bottom:22px;
     }
 
     .footer-column{
       padding:20px;
-      border-radius:20px;
+      border-radius:22px;
       background:rgba(255,255,255,.03);
       border:1px solid var(--line);
     }
@@ -551,12 +584,19 @@
       padding-top:24px;
     }
 
-    @media (max-width:980px){
+    @media (max-width:1100px){
       .hero-grid,
+      .ecosystem-wrap,
+      .product-card,
+      .cta-panel{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width:980px){
+      .grid-2,
       .grid-3,
-      .split,
-      .process,
-      .contact-wrap,
+      .steps,
       .footer-columns{
         grid-template-columns:1fr;
       }
@@ -569,14 +609,34 @@
         width:100%;
         overflow:auto;
       }
+
+      .nav-actions{
+        width:100%;
+      }
     }
 
     @media (max-width:640px){
-      .hero{padding-top:56px}
-      h1{letter-spacing:-1px}
-      .hero-actions{display:grid}
-      .btn{width:100%}
-      .mini-panels{grid-template-columns:1fr}
+      .hero{
+        padding-top:56px;
+      }
+
+      h1{
+        letter-spacing:-1px;
+      }
+
+      .hero-actions{
+        display:grid;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .hero-float{
+        position:static;
+        width:100%;
+        margin-top:14px;
+      }
     }
   </style>
 </head>
@@ -596,7 +656,6 @@
                 <stop offset="100%" stop-color="#7c5cff"/>
               </linearGradient>
             </defs>
-
             <rect x="2" y="2" width="60" height="60" rx="18" fill="#08111f"/>
             <rect x="6" y="6" width="52" height="52" rx="16" fill="url(#bclGrad)"/>
             <rect x="9" y="9" width="46" height="46" rx="14" fill="#08111f" />
@@ -607,15 +666,21 @@
         </div>
         <div class="brand-text">
           <strong>Blackcache Labs Ltd</strong>
-          <span>Apps · Software · Digital products</span>
+          <span>The company behind Puffbums and PuffZenDen</span>
         </div>
       </a>
 
       <div class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#why-us">Why us</a>
-        <a href="#process">Process</a>
-        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="#tactile-led-breathing">Tactile-led breathing</a>
+        <a href="#ecosystem">Ecosystem</a>
+        <a href="#puffbums">Puffbums</a>
+        <a href="#puffzenden">PuffZenDen</a>
+      </div>
+
+      <div class="nav-actions">
+        <a class="btn btn-secondary" href="/support.html">Support</a>
+        <a class="btn btn-primary" href="https://puffzenden.com" target="_blank" rel="noopener noreferrer">Visit PuffZenDen</a>
       </div>
     </div>
   </nav>
@@ -623,227 +688,332 @@
   <main id="top">
     <section class="hero">
       <div class="container hero-grid">
-        <div>
-          <div class="pill">Software company for modern businesses</div>
-          <h1>We build apps and software that turn ideas into practical products.</h1>
+        <div class="hero-copy">
+          <div class="eyebrow">Pioneering tactile-led breathing through a connected phygital ecosystem</div>
+          <h1>Blackcache Labs builds phygital products for calm, comfort, and regulation.</h1>
           <p>
-            Blackcache Labs Ltd designs and builds mobile apps, web platforms, internal tools, and tailored software solutions.
-            We help founders, startups, and businesses move from concept to launch with clean design, strong functionality, and reliable delivery.
+            Blackcache Labs Ltd is the company behind <strong>Puffbums</strong> and <strong>PuffZenDen</strong>.
+            We create a connected ecosystem where touch and guided breathing work together to support calm, grounding, and everyday moments of return.
+          </p>
+          <p>
+            Our work sits at the intersection of physical comfort companions and digital guidance, shaping a more intuitive way to experience breath-led regulation.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Start a conversation</a>
-            <a class="btn btn-secondary" href="#services">Explore services</a>
+            <a class="btn btn-primary" href="#ecosystem">Explore the ecosystem</a>
+            <a class="btn btn-secondary" href="https://puffzenden.com" target="_blank" rel="noopener noreferrer">Go to PuffZenDen</a>
           </div>
 
           <div class="hero-tags">
-            <div class="tag">Mobile app development</div>
-            <div class="tag">Web applications</div>
-            <div class="tag">Internal business tools</div>
-            <div class="tag">Product design &amp; build</div>
+            <div class="tag">Phygital calm ecosystem</div>
+            <div class="tag">Tactile-led breathing</div>
+            <div class="tag">Puffbums</div>
+            <div class="tag">PuffZenDen</div>
           </div>
         </div>
 
-        <div class="hero-card">
-          <div class="terminal">
-            <div class="terminal-top">
-              <div class="terminal-dots">
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-              </div>
-              <div class="terminal-title">blackcache-labs / product-build</div>
-            </div>
-
-            <div class="terminal-body">
-              <div class="code-block">
-                <div class="code-line"></div>
-                <div class="code-line"></div>
-                <div class="code-line"></div>
-                <div class="code-line"></div>
-                <div class="code-line"></div>
-              </div>
-
-              <div class="mini-panels">
-                <div class="mini-panel">
-                  <strong>Build clearly</strong>
-                  <span>Focused software that solves real business needs.</span>
-                </div>
-                <div class="mini-panel">
-                  <strong>Ship practically</strong>
-                  <span>Fast-moving delivery without unnecessary complexity.</span>
-                </div>
-              </div>
+        <div class="hero-visual">
+          <div class="hero-image-wrap">
+            <img src="assets/hero-lifestyle.png" alt="Lifestyle scene showing Oceanbum, the Oceanbum box, and the PuffZenDen app in a calm home setting" />
+          </div>
+          <div class="hero-float">
+            <h3>One connected experience</h3>
+            <p>
+              Puffbums bring the tactile anchor. PuffZenDen brings the guided breathing ritual. Together they create a calm, repeatable moment of return.
+            </p>
+            <div class="mini">
+              <div>• Physical comfort companion</div>
+              <div>• Guided digital breathing experience</div>
+              <div>• Designed to feel intuitive, gentle, and human</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="services">
+    <section id="about">
+      <div class="container grid-2">
+        <div class="card">
+          <div class="section-head">
+            <h2>About Blackcache Labs</h2>
+          </div>
+          <div class="about-copy">
+            <p>
+              Blackcache Labs Ltd is a product-led company focused on building original wellness technology experiences.
+              Rather than operating as a software agency, we develop and grow our own ecosystem of products.
+            </p>
+            <p>
+              Our focus is tactile-led breathing — a new category built around the idea that touch can support the breathing experience and make moments of calm feel more natural, more accessible, and easier to return to.
+            </p>
+            <div class="callout">
+              We are not a general B2B software company. We are the company behind a distinct phygital model that combines physical companions with guided digital calm experiences.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="section-head">
+            <h2>What guides our work</h2>
+          </div>
+          <div class="grid-2" style="grid-template-columns:1fr; gap:14px;">
+            <div>
+              <div class="icon">✦</div>
+              <h3>Original product thinking</h3>
+              <p>
+                We build owned products that are category-led, purposeful, and designed around real human use.
+              </p>
+            </div>
+            <div>
+              <div class="icon">✦</div>
+              <h3>Calm through touch and breath</h3>
+              <p>
+                We believe regulation can feel more intuitive when touch becomes part of the ritual, not separate from it.
+              </p>
+            </div>
+            <div>
+              <div class="icon">✦</div>
+              <h3>Human, premium, and practical</h3>
+              <p>
+                Our products aim to feel emotionally warm, aesthetically refined, and useful in everyday life.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tactile-led-breathing">
       <div class="container">
         <div class="section-head">
-          <h2>What we build</h2>
+          <h2>What is tactile-led breathing?</h2>
           <p>
-            We create software products that are useful, scalable, and designed to support real users and real operations.
+            Tactile-led breathing is the idea of pairing guided breathing with a physical tactile anchor.
+            Instead of breathwork being only visual or audio-based, touch becomes part of the experience.
           </p>
         </div>
 
         <div class="grid-3">
           <div class="card">
-            <div class="icon">📱</div>
-            <h3>Mobile apps</h3>
+            <div class="icon">1</div>
+            <h3>Touch becomes part of the ritual</h3>
             <p>
-              iOS and Android app experiences built for usability, performance, and smooth customer journeys.
+              Holding and gently squeezing a tactile companion gives the breath a physical reference point, helping the moment feel more grounded and embodied.
             </p>
           </div>
-
           <div class="card">
-            <div class="icon">💻</div>
-            <h3>Web platforms</h3>
+            <div class="icon">2</div>
+            <h3>Guidance supports consistency</h3>
             <p>
-              Dashboards, portals, websites, and web applications designed for clarity, speed, and growth.
+              Digital prompts and guided breathing patterns provide structure, helping users return to the practice with clarity and ease.
             </p>
           </div>
-
           <div class="card">
-            <div class="icon">⚙️</div>
-            <h3>Custom software</h3>
+            <div class="icon">3</div>
+            <h3>A calmer, more intuitive experience</h3>
             <p>
-              Internal systems, workflow tools, and business software tailored to your specific operations.
+              The combination of touch and breath creates a simple, repeatable ritual designed to feel supportive rather than abstract.
             </p>
           </div>
         </div>
+
+        <p class="quote-line">
+          The result is a breathing experience designed to feel more tactile, more human, and more accessible.
+        </p>
       </div>
     </section>
 
-    <section id="why-us">
-      <div class="container split">
-        <div class="card">
-          <div class="section-head">
-            <h2>About Blackcache Labs</h2>
-            <p>
-              We are a software company focused on building digital products with clear thinking, polished execution, and practical outcomes.
-              Our goal is not to overcomplicate software. It is to create products that work well, feel modern, and deliver value from day one.
-            </p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="section-head">
-            <h2>Why businesses work with us</h2>
-          </div>
-
-          <div class="list">
-            <div class="list-item">
-              <div class="tick">✓</div>
-              <div>Modern design and product-led thinking</div>
-            </div>
-            <div class="list-item">
-              <div class="tick">✓</div>
-              <div>Clean, practical software decisions</div>
-            </div>
-            <div class="list-item">
-              <div class="tick">✓</div>
-              <div>Flexible support for startups and growing teams</div>
-            </div>
-            <div class="list-item">
-              <div class="tick">✓</div>
-              <div>Strong focus on usability, speed, and reliability</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="process">
+    <section id="ecosystem">
       <div class="container">
         <div class="section-head">
-          <h2>How we work</h2>
+          <h2>One ecosystem. Two connected experiences.</h2>
           <p>
-            Our approach is simple: understand the problem, design the solution clearly, build with focus, and ship with confidence.
+            Blackcache Labs is building a connected calm ecosystem around tactile-led breathing.
+            Puffbums provide the physical tactile companion. PuffZenDen provides the guided digital breathing experience.
+            Together they shape a phygital ritual designed to feel intuitive, comforting, and repeatable.
           </p>
         </div>
 
-        <div class="process">
-          <div class="step-card">
-            <div class="step-number">1</div>
-            <h3>Discover</h3>
-            <p>We understand the product idea, business need, and user problem.</p>
+        <div class="ecosystem-wrap">
+          <div class="stack">
+            <div class="product-card">
+              <img src="assets/puffbums-box.jpg" alt="Oceanbum packaging and Puffbum product" />
+              <div class="product-copy">
+                <h3>Puffbums</h3>
+                <p>
+                  Soft, squeezable tactile companions designed to support moments of calm, grounding, and comfort.
+                </p>
+                <div class="inline-list">
+                  <div><span class="bullet">•</span><span>Physical tactile anchor</span></div>
+                  <div><span class="bullet">•</span><span>Designed for calm rituals</span></div>
+                  <div><span class="bullet">•</span><span>Works with PuffZenDen</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <img src="assets/puffzenden-app.png" alt="PuffZenDen app on a smartphone screen" />
+              <div class="product-copy">
+                <h3>PuffZenDen</h3>
+                <p>
+                  The digital home of tactile-led breathing, offering guided breathing experiences designed to work with touch.
+                </p>
+                <div class="inline-list">
+                  <div><span class="bullet">•</span><span>Guided breathing rituals</span></div>
+                  <div><span class="bullet">•</span><span>Digital calm support</span></div>
+                  <div><span class="bullet">•</span><span>Built to pair with Puffbums</span></div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="step-card">
-            <div class="step-number">2</div>
-            <h3>Design</h3>
-            <p>We shape the structure, user flow, and product experience.</p>
-          </div>
-
-          <div class="step-card">
-            <div class="step-number">3</div>
-            <h3>Build</h3>
-            <p>We develop the product with a focus on quality and functionality.</p>
-          </div>
-
-          <div class="step-card">
-            <div class="step-number">4</div>
-            <h3>Launch</h3>
-            <p>We help move the product live and support the next phase of growth.</p>
+          <div class="card image-panel">
+            <img src="assets/hero-lifestyle.png" alt="Lifestyle image showing the Blackcache Labs ecosystem in use" />
+            <div class="image-caption">
+              <strong>The Blackcache Labs ecosystem in practice</strong>
+              <span>
+                A tactile companion in hand, guided breathing on screen, and a calm everyday setting — the physical and digital experience working together.
+              </span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact">
-      <div class="container contact-wrap">
-        <div class="contact-box">
+    <section id="puffbums">
+      <div class="container">
+        <div class="section-head">
+          <h2>Puffbums — your tactile companion</h2>
+          <p>
+            Puffbums are soft, squeezable companions designed to support moments of calm, grounding, and comfort.
+            They are made to be held and gently squeezed during tactile-led breathing, helping touch become part of the ritual.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card image-panel">
+            <img src="assets/oceanbum-squeeze.jpg" alt="Close-up of a hand gently squeezing Oceanbum" />
+            <div class="image-caption">
+              <strong>Tactile by design</strong>
+              <span>
+                Puffbums are designed to be held and gently squeezed, making touch a meaningful part of the breathing moment.
+              </span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="about-copy">
+              <p>
+                Small enough to keep close and comforting enough to reach for often, Puffbums are built to support tactile-led breathing in a way that feels simple and approachable.
+              </p>
+              <p>
+                Oceanbum is the first available Puffbum in the ecosystem and represents the tactile side of the Blackcache Labs vision.
+              </p>
+            </div>
+
+            <div class="inline-list" style="margin-top:20px;">
+              <div><span class="bullet">✓</span><span>Soft, squeezable tactile comfort</span></div>
+              <div><span class="bullet">✓</span><span>Designed for grounding and calm rituals</span></div>
+              <div><span class="bullet">✓</span><span>Created to work with PuffZenDen</span></div>
+            </div>
+
+            <div style="margin-top:22px;">
+              <img
+                src="assets/oceanbum-product.jpg"
+                alt="Oceanbum product standing on a desk"
+                style="border-radius:20px; border:1px solid var(--line);"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="puffzenden">
+      <div class="container grid-2">
+        <div class="card">
           <div class="section-head">
-            <h2>Let’s build something useful</h2>
+            <h2>PuffZenDen — the guided breathing experience</h2>
+          </div>
+          <div class="about-copy">
             <p>
-              Have an app, software product, or business tool in mind? Send a message and we’ll get back to you.
+              PuffZenDen is the digital home of tactile-led breathing. It guides users through breathing rituals designed to work with touch, helping turn moments of overwhelm, reset, or wind-down into structured calm experiences.
+            </p>
+            <p>
+              It is designed to feel supportive, clear, and emotionally warm — a guided experience that helps the user connect the physical act of holding a Puffbum with a digital breathing rhythm.
             </p>
           </div>
 
-          <form id="contactForm" action="https://formsubmit.co/sales@blackcachelabs.com" method="POST">
-            <input type="text" id="name" name="name" placeholder="Your name" required />
-            <input type="email" id="email" name="email" placeholder="Your email" required />
-            <textarea id="message" name="message" placeholder="Tell us about your project" required></textarea>
+          <div class="inline-list" style="margin-top:20px;">
+            <div><span class="bullet">✓</span><span>Guided tactile-led breathing</span></div>
+            <div><span class="bullet">✓</span><span>Designed to pair with Puffbums</span></div>
+            <div><span class="bullet">✓</span><span>Part of the wider Blackcache Labs calm ecosystem</span></div>
+          </div>
 
-            <input type="hidden" name="_subject" value="New website enquiry - Blackcache Labs Ltd">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_next" value="https://blackcachelabs.com/?submitted=true">
-
-            <button class="btn btn-primary" type="submit">Send enquiry</button>
-          </form>
-
-          <div class="note" id="formNote">
-            Your enquiry will be sent to sales@blackcachelabs.com.
+          <div style="margin-top:24px;">
+            <a class="btn btn-primary" href="https://puffzenden.com" target="_blank" rel="noopener noreferrer">Visit PuffZenDen Store</a>
           </div>
         </div>
 
-        <div class="contact-box">
-          <div class="section-head">
-            <h2>Company details</h2>
-            <p>Blackcache Labs Ltd</p>
+        <div class="card image-panel">
+          <img src="assets/puffzenden-app.png" alt="PuffZenDen app displayed on a phone screen" />
+          <div class="image-caption">
+            <strong>Digital guidance with a tactile heart</strong>
+            <span>
+              PuffZenDen provides the guided breathing layer of the ecosystem, helping touch and breath work together in one experience.
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works">
+      <div class="container">
+        <div class="section-head">
+          <h2>How it works</h2>
+          <p>
+            The Blackcache Labs approach is simple: bring together touch, breath, and gentle guidance in a way that feels accessible and repeatable.
+          </p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Hold</h3>
+            <p>
+              Pick up your Puffbum and let the tactile experience create an immediate physical point of focus.
+            </p>
           </div>
 
-          <div class="list">
-            <div class="list-item">
-              <div class="tick">→</div>
-              <div>App and software development company</div>
-            </div>
-            <div class="list-item">
-              <div class="tick">→</div>
-              <div>Available for software builds, internal tools, and digital product partnerships</div>
-            </div>
-            <div class="list-item">
-              <div class="tick">→</div>
-              <div><a href="mailto:sales@blackcachelabs.com">sales@blackcachelabs.com</a></div>
-            </div>
-            <div class="list-item">
-              <div class="tick">→</div>
-              <div><a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Use</a> · <a href="/support.html">App Support</a></div>
-            </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Breathe</h3>
+            <p>
+              Follow the guided breathing rhythm through PuffZenDen while gently squeezing and releasing with the breath.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Return</h3>
+            <p>
+              Use the combination of touch and guided breath to support a calmer, more grounded moment of return.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-panel">
+          <div>
+            <h2>Explore the first product ecosystem from Blackcache Labs.</h2>
+            <p>
+              Visit PuffZenDen to discover the digital side of the experience and follow the evolution of tactile-led breathing through the wider Blackcache Labs ecosystem.
+            </p>
+          </div>
+          <div>
+            <a class="btn btn-primary" href="https://puffzenden.com" target="_blank" rel="noopener noreferrer">Visit PuffZenDen</a>
           </div>
         </div>
       </div>
@@ -856,8 +1026,7 @@
         <div class="footer-column">
           <h3>Blackcache Labs Ltd</h3>
           <p>
-            App and software development company building modern digital products,
-            internal tools, and web platforms for startups and growing businesses.
+            The company behind Puffbums and PuffZenDen, pioneering tactile-led breathing through a connected phygital ecosystem.
           </p>
           <div class="company-meta">
             Limited company registered in England and Wales<br>
@@ -867,24 +1036,67 @@
         </div>
 
         <div class="footer-column">
-          <h3>Support</h3>
+          <h3>Products & support</h3>
           <div class="footer-links">
+            <a href="https://puffzenden.com" target="_blank" rel="noopener noreferrer">PuffZenDen</a>
+            <a href="/support.html">Support</a>
             <a href="mailto:sales@blackcachelabs.com">sales@blackcachelabs.com</a>
-            <a href="/support.html">App Support</a>
-            <a href="/#contact">Contact form</a>
-            <a href="/">Home</a>
           </div>
         </div>
 
         <div class="footer-column">
-          <h3>Policies</h3>
+          <h3>Company</h3>
           <div class="footer-links">
             <a href="/privacy.html">Privacy Policy</a>
             <a href="/terms.html">Terms of Use</a>
+            <a href="/">Home</a>
           </div>
         </div>
       </div>
 
+      <div class="footer-inner">
+        <div>© <span id="year"></span> Blackcache Labs Ltd. All rights reserved.</div>
+        <div>Built around calm, touch, and digital guidance.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Blackcache Labs Ltd",
+      "legalName": "Blackcache Labs Ltd",
+      "url": "https://blackcachelabs.com/",
+      "email": "sales@blackcachelabs.com",
+      "identifier": "17149813",
+      "description": "Blackcache Labs Ltd is the company behind Puffbums and PuffZenDen, pioneering tactile-led breathing through a connected phygital ecosystem.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "130 Copperfields",
+        "addressRegion": "Essex",
+        "postalCode": "SS15 5RZ",
+        "addressCountry": "GB"
+      },
+      "sameAs": [
+        "https://puffzenden.com"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "sales@blackcachelabs.com",
+          "url": "https://blackcachelabs.com/support.html"
+        }
+      ]
+    }
+  </script>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
       <div class="footer-inner">
         <div>© <span id="year"></span> Blackcache Labs Ltd. All rights reserved.</div>
         <div>Designed to be clear, modern, and functional.</div>
