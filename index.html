@@ -99,7 +99,7 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:20px;
+      gap:28px;
       padding:16px 0;
     }
 
@@ -108,6 +108,7 @@
       align-items:center;
       gap:14px;
       min-width:0;
+      flex:0 0 auto;
     }
 
     .brand-mark{
@@ -139,9 +140,11 @@
     .nav-links{
       display:flex;
       align-items:center;
-      gap:22px;
+      justify-content:center;
+      gap:34px;
       color:var(--text-light-body);
       font-size:.95rem;
+      flex:1 1 auto;
     }
 
     .nav-links a:hover{
@@ -152,6 +155,7 @@
       display:flex;
       align-items:center;
       gap:12px;
+      flex:0 0 auto;
     }
 
     .btn{
@@ -175,12 +179,6 @@
       background:linear-gradient(135deg, var(--accent), var(--accent-3));
       color:var(--hero-dark);
       box-shadow:0 14px 34px rgba(110,231,255,.16);
-    }
-
-    .btn-secondary-dark{
-      background:rgba(255,255,255,.03);
-      border:1px solid rgba(255,255,255,.10);
-      color:var(--text-light);
     }
 
     .btn-secondary-light{
@@ -215,15 +213,18 @@
 
     .intro{
       background:var(--bg-light);
-      padding:64px 0 88px;
+      padding:64px 0 96px;
     }
 
     .intro-card{
       background:var(--card-light);
       border:1px solid var(--card-light-border);
       border-radius:var(--radius);
-      padding:42px;
+      padding:48px 42px;
       box-shadow:var(--shadow);
+      max-width:1120px;
+      margin:0 auto;
+      text-align:center;
     }
 
     .eyebrow{
@@ -236,20 +237,21 @@
       background:#FBFCFE;
       color:var(--text-body);
       font-size:.88rem;
-      margin-bottom:20px;
+      margin:0 auto 22px;
     }
 
     h1{
-      margin:0 0 18px;
+      margin:0 auto 20px;
       font-size:clamp(2.5rem, 5vw, 4.8rem);
       line-height:1.03;
       letter-spacing:-1.5px;
       color:var(--text-dark);
-      max-width:820px;
+      max-width:900px;
     }
 
     .intro-copy{
-      max-width:860px;
+      max-width:820px;
+      margin:0 auto;
     }
 
     .intro-copy p{
@@ -261,12 +263,13 @@
     .intro-actions{
       display:flex;
       flex-wrap:wrap;
+      justify-content:center;
       gap:14px;
-      margin-top:26px;
+      margin-top:28px;
     }
 
     .section{
-      padding:88px 0;
+      padding:96px 0;
     }
 
     .bg-light{
@@ -388,13 +391,13 @@
 
     .copy-stack{
       display:grid;
-      gap:18px;
+      gap:20px;
     }
 
     .copy-stack p{
       margin:0;
       color:var(--text-body);
-      font-size:1.02rem;
+      font-size:1.05rem;
     }
 
     .image-panel{
@@ -422,6 +425,77 @@
 
     .image-caption span{
       color:var(--text-body);
+    }
+
+    .about-editorial{
+      display:grid;
+      grid-template-columns:1.18fr .82fr;
+      gap:48px;
+      align-items:start;
+    }
+
+    .about-story{
+      max-width:760px;
+    }
+
+    .about-story .section-head{
+      margin-bottom:18px;
+    }
+
+    .about-story h2{
+      font-size:clamp(2rem, 3.2vw, 3.2rem);
+      letter-spacing:-1px;
+    }
+
+    .about-story p{
+      margin:0 0 22px;
+      color:var(--text-body);
+      font-size:1.08rem;
+      line-height:1.8;
+    }
+
+    .principles{
+      display:grid;
+      gap:22px;
+      padding-top:8px;
+    }
+
+    .principles-heading{
+      margin:0 0 6px;
+      font-size:1.1rem;
+      color:var(--text-dark);
+    }
+
+    .principle{
+      display:grid;
+      gap:8px;
+      padding:0 0 18px;
+      border-bottom:1px solid var(--card-light-border);
+    }
+
+    .principle:last-child{
+      border-bottom:none;
+      padding-bottom:0;
+    }
+
+    .principle-label{
+      font-size:.82rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#7A879C;
+      font-weight:700;
+    }
+
+    .principle h3{
+      margin:0;
+      color:var(--text-dark);
+      font-size:1.12rem;
+    }
+
+    .principle p{
+      margin:0;
+      color:var(--text-body);
+      font-size:.98rem;
     }
 
     .product-block{
@@ -605,7 +679,8 @@
 
     @media (max-width:1100px){
       .product-block,
-      .cta-panel{
+      .cta-panel,
+      .about-editorial{
         grid-template-columns:1fr;
       }
 
@@ -628,7 +703,9 @@
 
       .nav-links{
         width:100%;
+        justify-content:flex-start;
         overflow:auto;
+        gap:24px;
       }
 
       .nav-actions{
@@ -637,6 +714,10 @@
 
       .intro-card{
         padding:30px 24px;
+      }
+
+      .about-editorial{
+        gap:30px;
       }
     }
 
@@ -702,7 +783,6 @@
       </div>
 
       <div class="nav-actions">
-        <a class="btn btn-secondary-dark" href="/support.html">Support</a>
         <a class="btn btn-primary" href="https://puffzenden.com" target="_blank" rel="noopener noreferrer">Visit PuffZenDen</a>
       </div>
     </div>
@@ -742,41 +822,38 @@
     </section>
 
     <section id="about" class="section bg-light">
-      <div class="container grid-2">
-        <div class="card-light">
+      <div class="container about-editorial">
+        <div class="about-story">
           <div class="section-head">
             <h2>About Blackcache Labs</h2>
           </div>
-          <div class="copy-stack">
-            <p>
-              Blackcache Labs Ltd is a product-led company focused on building original wellness technology experiences.
-            </p>
-            <p>
-              Our focus is tactile-led breathing — a new category built around the idea that touch can support the breathing experience and make moments of calm feel more natural, more accessible, and easier to return to.
-            </p>
-          </div>
+          <p>
+            Blackcache Labs Ltd is a product-led company focused on building original wellness technology experiences.
+          </p>
+          <p>
+            Our focus is tactile-led breathing — a new category built around the idea that touch can support the breathing experience and make moments of calm feel more natural, more accessible, and easier to return to.
+          </p>
         </div>
 
-        <div class="card-light">
-          <div class="section-head">
-            <h2>What guides our work</h2>
+        <div class="principles">
+          <h3 class="principles-heading">What guides our work</h3>
+
+          <div class="principle">
+            <div class="principle-label">Principle 01</div>
+            <h3>Original product thinking</h3>
+            <p>We build owned products that are category-led, purposeful, and designed around real human use.</p>
           </div>
-          <div class="grid-2" style="grid-template-columns:1fr; gap:18px;">
-            <div>
-              <div class="icon">✦</div>
-              <h3>Original product thinking</h3>
-              <p>We build owned products that are category-led, purposeful, and designed around real human use.</p>
-            </div>
-            <div>
-              <div class="icon">✦</div>
-              <h3>Calm through touch and breath</h3>
-              <p>We believe regulation can feel more intuitive when touch becomes part of the ritual, not separate from it.</p>
-            </div>
-            <div>
-              <div class="icon">✦</div>
-              <h3>Human, premium, and practical</h3>
-              <p>Our products aim to feel emotionally warm, aesthetically refined, and useful in everyday life.</p>
-            </div>
+
+          <div class="principle">
+            <div class="principle-label">Principle 02</div>
+            <h3>Calm through touch and breath</h3>
+            <p>We believe regulation can feel more intuitive when touch becomes part of the ritual, not separate from it.</p>
+          </div>
+
+          <div class="principle">
+            <div class="principle-label">Principle 03</div>
+            <h3>Human, premium, and practical</h3>
+            <p>Our products aim to feel emotionally warm, aesthetically refined, and useful in everyday life.</p>
           </div>
         </div>
       </div>
@@ -946,20 +1023,20 @@
         <div class="steps">
           <div class="step">
             <div class="step-number">1</div>
-            <h3>Hold</h3>
-            <p>Pick up your Puffbum and let the tactile experience create an immediate physical point of focus.</p>
+            <h3>Breathe</h3>
+            <p>Begin with the guided rhythm and let your breath settle into the moment.</p>
           </div>
 
           <div class="step">
             <div class="step-number">2</div>
-            <h3>Breathe</h3>
-            <p>Follow the guided breathing rhythm through PuffZenDen while gently squeezing and releasing with the breath.</p>
+            <h3>Squeeze</h3>
+            <p>Hold your Puffbum and gently squeeze with the breath, making touch part of the ritual.</p>
           </div>
 
           <div class="step">
             <div class="step-number">3</div>
-            <h3>Return</h3>
-            <p>Use the combination of touch and guided breath to support a calmer, more grounded moment of return.</p>
+            <h3>Unwind</h3>
+            <p>Use the combination of breath and tactile comfort to ease into a calmer, more grounded state.</p>
           </div>
         </div>
       </div>
