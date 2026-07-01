@@ -71,6 +71,10 @@
       line-height:1.6;
     }
 
+    body.no-scroll{
+      overflow:hidden;
+    }
+
     img{
       max-width:100%;
       display:block;
@@ -156,6 +160,35 @@
       align-items:center;
       gap:12px;
       flex:0 0 auto;
+    }
+
+    .mobile-menu-toggle{
+      display:none;
+      align-items:center;
+      justify-content:center;
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      color:var(--text-light);
+      cursor:pointer;
+      transition:.2s ease;
+      flex:0 0 auto;
+    }
+
+    .mobile-menu-toggle:hover{
+      transform:translateY(-1px);
+      background:rgba(255,255,255,.05);
+    }
+
+    .mobile-menu-toggle svg{
+      width:22px;
+      height:22px;
+    }
+
+    .mobile-drawer{
+      display:none;
     }
 
     .btn{
@@ -498,6 +531,17 @@
       font-size:.98rem;
     }
 
+    .ecosystem-layout{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+
+    .ecosystem-summaries{
+      display:grid;
+      gap:24px;
+    }
+
     .product-block{
       display:grid;
       grid-template-columns:.96fr 1.04fr;
@@ -591,6 +635,10 @@
     .step p{
       margin:0;
       color:var(--text-body);
+    }
+
+    .puffzenden-inline-cta{
+      margin-top:24px;
     }
 
     .cta-panel{
@@ -690,38 +738,251 @@
     }
 
     @media (max-width:980px){
+      .nav-inner{
+        gap:16px;
+        padding:14px 0;
+      }
+
+      .nav-links,
+      .nav-actions{
+        display:none;
+      }
+
+      .brand{
+        min-width:0;
+        flex:1 1 auto;
+      }
+
+      .brand-mark{
+        width:44px;
+        height:44px;
+        border-radius:14px;
+      }
+
+      .brand-text strong{
+        font-size:.98rem;
+      }
+
+      .brand-text span{
+        display:none;
+      }
+
+      .mobile-menu-toggle{
+        display:inline-flex;
+      }
+
+      .mobile-drawer{
+        display:block;
+        max-height:0;
+        overflow:hidden;
+        transition:max-height .28s ease, padding .28s ease;
+        border-top:1px solid rgba(255,255,255,.08);
+      }
+
+      .nav.open .mobile-drawer{
+        max-height:520px;
+      }
+
+      .mobile-drawer-inner{
+        padding:12px 0 18px;
+        display:grid;
+        gap:4px;
+      }
+
+      .mobile-nav-link{
+        display:block;
+        padding:12px 4px;
+        color:var(--text-light);
+        font-size:1rem;
+      }
+
+      .mobile-nav-link + .mobile-nav-link{
+        border-top:1px solid rgba(255,255,255,.06);
+      }
+
+      .mobile-drawer-cta{
+        margin-top:10px;
+      }
+
+      .mobile-drawer-cta .btn{
+        width:100%;
+      }
+
       .grid-2,
       .grid-3,
       .steps,
-      .footer-columns{
+      .footer-columns,
+      .ecosystem-layout{
         grid-template-columns:1fr;
       }
 
-      .nav-inner{
-        flex-wrap:wrap;
-      }
-
-      .nav-links{
-        width:100%;
-        justify-content:flex-start;
-        overflow:auto;
-        gap:24px;
-      }
-
-      .nav-actions{
-        width:100%;
-      }
-
       .intro-card{
-        padding:30px 24px;
+        padding:32px 24px;
       }
 
       .about-editorial{
         gap:30px;
       }
+
+      .section{
+        padding:72px 0;
+      }
+
+      .card-light,
+      .card-dark,
+      .step,
+      .product-block,
+      .footer-column{
+        padding:22px;
+      }
+    }
+
+    @media (max-width:768px){
+      .banner{
+        padding:12px 0 0;
+      }
+
+      .banner-image-wrap{
+        width:100%;
+        border-top-left-radius:22px;
+        border-top-right-radius:22px;
+      }
+
+      .banner-image{
+        aspect-ratio:16 / 9.5;
+      }
+
+      .intro{
+        padding:40px 0 56px;
+      }
+
+      .intro-card{
+        padding:26px 22px;
+        border-radius:24px;
+      }
+
+      .eyebrow{
+        font-size:.76rem;
+        padding:8px 12px;
+        margin-bottom:18px;
+        max-width:100%;
+      }
+
+      h1{
+        font-size:clamp(2.15rem, 10vw, 3rem);
+        max-width:92%;
+        margin-bottom:16px;
+      }
+
+      .intro-copy{
+        max-width:560px;
+        text-align:left;
+      }
+
+      .intro-copy p{
+        font-size:1rem;
+        margin-bottom:14px;
+      }
+
+      .intro-actions{
+        margin-top:22px;
+      }
+
+      .section{
+        padding:60px 0;
+      }
+
+      .section-head{
+        margin-bottom:22px;
+      }
+
+      .section-head h2{
+        font-size:clamp(1.85rem, 8vw, 2.45rem);
+      }
+
+      .section-head p,
+      .copy-stack p,
+      .about-story p,
+      .product-copy p,
+      .step p,
+      .card-light p,
+      .principle p{
+        font-size:1rem;
+      }
+
+      .about-story p{
+        margin-bottom:18px;
+        line-height:1.7;
+      }
+
+      .principles{
+        gap:18px;
+        padding-top:0;
+      }
+
+      .principle{
+        padding-bottom:16px;
+      }
+
+      .ecosystem-summaries{
+        display:none;
+      }
+
+      .image-panel img.ecosystem-image{
+        max-height:420px;
+      }
+
+      .image-panel img.squeeze-image{
+        max-height:420px;
+      }
+
+      .product-block img.product-image{
+        max-height:360px;
+      }
+
+      .image-panel img.app-image{
+        max-height:520px;
+        object-fit:contain;
+        background:#FFFFFF;
+      }
+
+      .puffzenden-inline-cta{
+        display:none;
+      }
+
+      .cta-panel{
+        padding:26px 22px;
+      }
+
+      .cta-panel h2{
+        font-size:clamp(1.8rem, 8vw, 2.35rem);
+      }
+
+      .footer{
+        padding-top:24px;
+      }
     }
 
     @media (max-width:640px){
+      .nav-inner{
+        padding:12px 0;
+      }
+
+      .brand-mark{
+        width:42px;
+        height:42px;
+      }
+
+      .brand-text strong{
+        font-size:.95rem;
+      }
+
+      .mobile-menu-toggle{
+        width:42px;
+        height:42px;
+        border-radius:12px;
+      }
+
       h1{
         letter-spacing:-1px;
       }
@@ -735,7 +996,16 @@
       }
 
       .section{
-        padding:72px 0;
+        padding:56px 0;
+      }
+
+      .card-light,
+      .card-dark,
+      .step,
+      .product-block,
+      .footer-column{
+        padding:20px;
+        border-radius:24px;
       }
 
       .banner-image{
@@ -745,7 +1015,7 @@
   </style>
 </head>
 <body>
-  <nav class="nav">
+  <nav class="nav" id="siteNav">
     <div class="container nav-inner">
       <a href="#top" class="brand" aria-label="Blackcache Labs home">
         <div class="brand-mark" aria-hidden="true">
@@ -784,6 +1054,36 @@
 
       <div class="nav-actions">
         <a class="btn btn-primary" href="https://puffzenden.com" target="_blank" rel="noopener noreferrer">Visit PuffZenDen</a>
+      </div>
+
+      <button
+        class="mobile-menu-toggle"
+        id="mobileMenuToggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobileDrawer"
+        type="button"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <path d="M4 7h16"></path>
+          <path d="M4 12h16"></path>
+          <path d="M4 17h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div class="mobile-drawer" id="mobileDrawer">
+      <div class="container mobile-drawer-inner">
+        <a class="mobile-nav-link" href="#about">About</a>
+        <a class="mobile-nav-link" href="#tactile-led-breathing">Tactile-led breathing</a>
+        <a class="mobile-nav-link" href="#ecosystem">Ecosystem</a>
+        <a class="mobile-nav-link" href="#puffbums">Puffbums</a>
+        <a class="mobile-nav-link" href="#puffzenden">PuffZenDen</a>
+        <a class="mobile-nav-link" href="/support.html">Support</a>
+
+        <div class="mobile-drawer-cta">
+          <a class="btn btn-primary" href="https://puffzenden.com" target="_blank" rel="noopener noreferrer">Visit PuffZenDen</a>
+        </div>
       </div>
     </div>
   </nav>
@@ -900,16 +1200,16 @@
           </p>
         </div>
 
-        <div class="grid-2">
+        <div class="ecosystem-layout">
           <div class="card-light image-panel">
-            <img src="assets/hero-lifestyle.png" alt="Lifestyle image showing the Blackcache Labs ecosystem in use" />
+            <img class="ecosystem-image" src="assets/hero-lifestyle.png" alt="Lifestyle image showing the Blackcache Labs ecosystem in use" />
             <div class="image-caption">
               <strong>The ecosystem in practice</strong>
               <span>A tactile companion in hand, guided breathing on screen, and a calm everyday setting working together in one connected experience.</span>
             </div>
           </div>
 
-          <div style="display:grid; gap:24px;">
+          <div class="ecosystem-summaries">
             <div class="card-light">
               <h3>Puffbums</h3>
               <p>Soft, squeezable tactile companions designed to support moments of calm, grounding, and comfort.</p>
@@ -946,7 +1246,7 @@
 
         <div class="grid-2">
           <div class="card-light image-panel">
-            <img src="assets/oceanbum-squeeze.jpg" alt="Close-up of a hand gently squeezing Oceanbum" />
+            <img class="squeeze-image" src="assets/oceanbum-squeeze.jpg" alt="Close-up of a hand gently squeezing Oceanbum" />
             <div class="image-caption">
               <strong>Tactile by design</strong>
               <span>Puffbums are designed to be held and gently squeezed, making touch a meaningful part of the breathing moment.</span>
@@ -954,7 +1254,7 @@
           </div>
 
           <div class="product-block">
-            <img src="assets/oceanbum-product.jpg" alt="Oceanbum product standing on a desk" />
+            <img class="product-image" src="assets/oceanbum-product.jpg" alt="Oceanbum product standing on a desk" />
             <div class="product-copy">
               <h3>Designed for calm, grounding, and comfort</h3>
               <p>
@@ -996,13 +1296,13 @@
             <div><span class="bullet">✓</span><span>Part of the wider Blackcache Labs ecosystem</span></div>
           </div>
 
-          <div style="margin-top:24px;">
+          <div class="puffzenden-inline-cta">
             <a class="btn btn-primary" href="https://puffzenden.com" target="_blank" rel="noopener noreferrer">Visit PuffZenDen</a>
           </div>
         </div>
 
         <div class="card-light image-panel">
-          <img src="assets/puffzenden-app.png" alt="PuffZenDen app displayed on a phone screen" />
+          <img class="app-image" src="assets/puffzenden-app.png" alt="PuffZenDen app displayed on a phone screen" />
           <div class="image-caption">
             <strong>Digital guidance with a tactile heart</strong>
             <span>PuffZenDen provides the guided breathing layer of the ecosystem, helping touch and breath work together in one experience.</span>
@@ -1133,6 +1433,46 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const siteNav = document.getElementById("siteNav");
+    const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+    const mobileDrawerLinks = document.querySelectorAll(".mobile-drawer a");
+
+    function closeMobileMenu() {
+      siteNav.classList.remove("open");
+      document.body.classList.remove("no-scroll");
+      mobileMenuToggle.setAttribute("aria-expanded", "false");
+    }
+
+    function openMobileMenu() {
+      siteNav.classList.add("open");
+      document.body.classList.add("no-scroll");
+      mobileMenuToggle.setAttribute("aria-expanded", "true");
+    }
+
+    if (mobileMenuToggle) {
+      mobileMenuToggle.addEventListener("click", () => {
+        const isOpen = siteNav.classList.contains("open");
+        if (isOpen) {
+          closeMobileMenu();
+        } else {
+          openMobileMenu();
+        }
+      });
+    }
+
+    mobileDrawerLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        closeMobileMenu();
+      });
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 980) {
+        closeMobileMenu();
+      }
+    });
   </script>
 </body>
+</html>
 </html>
