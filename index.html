@@ -464,6 +464,77 @@
       color:var(--text-body);
     }
 
+
+    .brand-lockup{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(180deg, #FFFFFF 0%, #FAFCFF 100%);
+      border:1px solid var(--card-light-border);
+      box-shadow:0 18px 44px rgba(14,23,38,.06);
+      overflow:hidden;
+      flex:0 0 auto;
+    }
+
+    .brand-lockup img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      display:block;
+      border:0 !important;
+      border-radius:0 !important;
+      box-shadow:none !important;
+      background:transparent;
+    }
+
+    .brand-lockup-seal{
+      width:106px;
+      height:106px;
+      padding:8px;
+      border-radius:28px;
+      margin-bottom:18px;
+    }
+
+    .brand-lockup-square{
+      width:146px;
+      height:146px;
+      padding:10px;
+      border-radius:30px;
+      margin-bottom:20px;
+    }
+
+    .brand-lockup-chip{
+      width:72px;
+      height:72px;
+      padding:7px;
+      border-radius:22px;
+      margin-bottom:16px;
+      box-shadow:0 14px 32px rgba(14,23,38,.05);
+    }
+
+    .brand-lockup-chip-square{
+      width:86px;
+      height:86px;
+      padding:7px;
+    }
+
+    .product-actions{
+      display:flex;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:22px;
+    }
+
+    .product-actions .btn{
+      padding:13px 20px;
+    }
+    .cta-panel .product-actions{
+      margin-top:0;
+      justify-content:flex-end;
+    }
+
+
     .about-editorial{
       display:grid;
       grid-template-columns:1.18fr .82fr;
@@ -558,7 +629,7 @@
       box-shadow:var(--shadow);
     }
 
-    .product-block img{
+    .product-block > img{
       width:100%;
       display:block;
       border-radius:22px;
@@ -976,6 +1047,30 @@
         object-fit:cover;
       }
 
+      .brand-lockup-seal{
+        width:92px;
+        height:92px;
+        border-radius:24px;
+        margin-bottom:16px;
+      }
+
+      .brand-lockup-square{
+        width:128px;
+        height:128px;
+        border-radius:26px;
+        margin-bottom:18px;
+      }
+
+      .product-actions{
+        display:grid;
+        gap:12px;
+      }
+
+      .cta-panel .product-actions{
+        justify-content:stretch;
+      }
+
+
       .puffzenden-inline-cta{
         display:none;
       }
@@ -1114,6 +1209,9 @@
         <div class="mobile-drawer-cta">
           <a class="btn btn-primary" href="https://puffzenden.com" target="_blank" rel="noopener noreferrer">Visit PuffZenDen</a>
         </div>
+        <div class="mobile-drawer-cta">
+          <a class="btn btn-secondary-light" href="https://puffbums.com" target="_blank" rel="noopener noreferrer">Visit Puffbums</a>
+        </div>
       </div>
     </div>
   </nav>
@@ -1241,6 +1339,9 @@
 
           <div class="ecosystem-summaries">
             <div class="card-light">
+              <div class="brand-lockup brand-lockup-chip" aria-hidden="true">
+                <img src="assets/puffbums-logo.png" alt="" />
+              </div>
               <h3>Puffbums</h3>
               <p>Soft, squeezable tactile companions designed to support moments of calm, grounding, and comfort.</p>
               <div class="inline-list">
@@ -1251,6 +1352,9 @@
             </div>
 
             <div class="card-light">
+              <div class="brand-lockup brand-lockup-chip brand-lockup-chip-square" aria-hidden="true">
+                <img src="assets/puffzenden-logo.png" alt="" />
+              </div>
               <h3>PuffZenDen</h3>
               <p>The digital home of tactile-led breathing, offering guided breathing experiences designed to work with touch.</p>
               <div class="inline-list">
@@ -1286,6 +1390,9 @@
           <div class="product-block">
             <img class="product-image" src="assets/oceanbum-product.jpg" alt="Oceanbum product standing on a desk" />
             <div class="product-copy">
+              <div class="brand-lockup brand-lockup-seal">
+                <img src="assets/puffbums-logo.png" alt="Puffbums logo" />
+              </div>
               <h3>Designed for calm, grounding, and comfort</h3>
               <p>
                 Small enough to keep close and comforting enough to reach for often, Puffbums are built to support tactile-led breathing in a way that feels simple and approachable.
@@ -1299,6 +1406,11 @@
                 <div><span class="bullet">✓</span><span>Designed for grounding and calm rituals</span></div>
                 <div><span class="bullet">✓</span><span>Created to work with PuffZenDen</span></div>
               </div>
+
+              <div class="product-actions">
+                <a class="btn btn-primary" href="https://puffbums.com" target="_blank" rel="noopener noreferrer">Visit Puffbums</a>
+                <a class="btn btn-secondary-light" href="https://puffzenden.com" target="_blank" rel="noopener noreferrer">Shop Founder Bundle</a>
+              </div>
             </div>
           </div>
         </div>
@@ -1308,6 +1420,9 @@
     <section id="puffzenden" class="section bg-cool">
       <div class="container grid-2">
         <div class="card-light">
+          <div class="brand-lockup brand-lockup-square">
+            <img src="assets/puffzenden-logo.png" alt="PuffZenDen logo" />
+          </div>
           <div class="section-head">
             <h2>PuffZenDen — the guided breathing experience</h2>
           </div>
@@ -1378,11 +1493,12 @@
           <div>
             <h2>Explore the first product ecosystem from Blackcache Labs.</h2>
             <p>
-              Visit PuffZenDen to discover the digital side of the experience and follow the evolution of tactile-led breathing through the wider Blackcache Labs ecosystem.
+              Visit PuffZenDen to discover the guided digital side of the experience, or explore Puffbums to see the tactile companions behind the ritual.
             </p>
           </div>
-          <div>
+          <div class="product-actions">
             <a class="btn btn-primary" href="https://puffzenden.com" target="_blank" rel="noopener noreferrer">Visit PuffZenDen</a>
+            <a class="btn btn-secondary-light" href="https://puffbums.com" target="_blank" rel="noopener noreferrer">Visit Puffbums</a>
           </div>
         </div>
       </div>
@@ -1408,6 +1524,7 @@
           <h3>Products &amp; support</h3>
           <div class="footer-links">
             <a href="https://puffzenden.com" target="_blank" rel="noopener noreferrer">PuffZenDen</a>
+            <a href="https://puffbums.com" target="_blank" rel="noopener noreferrer">Puffbums</a>
             <a href="/support.html">Support</a>
             <a href="mailto:sales@blackcachelabs.com">sales@blackcachelabs.com</a>
           </div>
@@ -1448,7 +1565,8 @@
         "addressCountry": "GB"
       },
       "sameAs": [
-        "https://puffzenden.com"
+        "https://puffzenden.com",
+        "https://puffbums.com"
       ],
       "contactPoint": [
         {
